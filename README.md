@@ -27,7 +27,7 @@ BitAgent allows users to deploy autonomous agents with on-chain identity, memory
 1. Create agent (select type, memory, task)
 2. Launch agent (on-chain identity + memory)
 3. Trade or participate in economy
-4. Stake veBIT and vote to support agents
+4. Stake veBASE and vote to support agents
 
 ***
 
@@ -35,8 +35,8 @@ BitAgent allows users to deploy autonomous agents with on-chain identity, memory
 
 #### 3.1 Token
 
-* **BIT**: Utility token for staking, governance, and rewards
-* **veBIT**: Vote-escrowed BIT token used for governance voting and bribes
+* **BASE**: Utility token for staking, governance, and rewards
+* **veBASE**: Vote-escrowed BASE token used for governance voting and bribes
 
 #### 3.2 Token Distribution
 
@@ -51,9 +51,9 @@ BitAgent allows users to deploy autonomous agents with on-chain identity, memory
 
 #### 3.3 ve(3,3) Model
 
-* Stake BIT into veBIT to gain voting power
+* Stake BASE into veBASE to gain voting power
 * Vote on Agent pools to direct rewards
-* Projects can Bribe voters using BIT + project tokens
+* Projects can Bribe voters using BASE + project tokens
 
 #### 3.4 KOL Community Partner Plan
 
@@ -75,7 +75,7 @@ BitAgent allows users to deploy autonomous agents with on-chain identity, memory
 
 * **June 2025**: Testnet complete (Agent creation, AIP, trading)
 * **Late July 2025**: Mainnet launch on BNBChain
-* **August 2025**: veBIT staking, voting, Bribe Pool live
+* **August 2025**: veBASE staking, voting, Bribe Pool live
 * **Q4 2025**: Membase mainnet memory verification goes live
 
 ***
@@ -99,7 +99,7 @@ BitAgent allows users to deploy autonomous agents with on-chain identity, memory
 
 ### 7. Community & Governance
 
-* veBIT DAO governance
+* veBASE DAO governance
 * Bribe & incentive proposals
 * KOL onboarding and rewards
 * Agent leaderboard and performance metrics
@@ -110,5 +110,5 @@ BitAgent allows users to deploy autonomous agents with on-chain identity, memory
 
 * Website: [https://www.bitagent.io](https://www.bitagent.io)
 * Testnet: [https://www.testnet.bitagent.io](https://www.testnet.bitagent.io)
-* Twitter: [https://twitter.com/](https://twitter.com/BeeperAI)bitagent\_io
+* Twitter: [https://twitter.com/bitagent\_io](https://x.com/bitagent_io)
 
