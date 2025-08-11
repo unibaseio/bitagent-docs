@@ -1,6 +1,6 @@
-# Developer SDK (coming soon)
+# Developer
 
-
+### Developer SDK (coming soon)
 
 * Agent creation templates
 * Agent plugin interface
