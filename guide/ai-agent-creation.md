@@ -20,4 +20,4 @@ Bitagent has integrated the latest large language models (LLMs), such as OpenAI,
 * X
 * Telegram
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-08-12 at 01.37.28.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-08-12 at 01.37.28.png" alt="" width="375"><figcaption></figcaption></figure>
