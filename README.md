@@ -19,8 +19,8 @@ BitAgent allows users to deploy autonomous agents with on-chain identity, memory
 ### Roadmap
 
 * **June 2025**: Testnet complete (Agent creation, AIP, trading)
-* **Late July 2025**: Mainnet launch on BNBChain
-* **August 2025**: veBASE staking, voting, Bribe Pool live
+* **August 2025**: Mainnet launch on BNBChain
+* **September 2025**: veBASE staking, voting, Bribe Pool live
 * **Q4 2025**: Membase mainnet memory verification goes live
 
 
