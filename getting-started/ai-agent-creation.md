@@ -11,10 +11,10 @@ Bitagent has integrated the latest large language models (LLMs), such as OpenAI,
 
 #### \*Step 2. Bonding curve design
 
-* Choose parent token, currently supports USD1, WBNB
+* Choose parent token, currently supports UB, USD1, WBNB
 * (Optional) DEV Reserve
 
-#### (Optional) Step 3. Add social media links&#x20;
+#### Step 3. Add social media links(Optional)&#x20;
 
 * Website
 * X

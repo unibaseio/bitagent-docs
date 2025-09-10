@@ -4,7 +4,7 @@
 A: In the **Membase module**, a decentralized and tamper-proof memory system.
 
 **Q: How can I customize my agent’s personality?**\
-A: By setting a personalized **Prompt** on the Profile page.
+A: You can set up an agent's prompt on the Profile page to define its personality, knowledge, and interaction style.
 
 **Q: What is the ve(3,3) model?**\
 A: An incentive model where users lock $UB tokens to earn rewards and governance weight.
