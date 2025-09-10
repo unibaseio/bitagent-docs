@@ -1,27 +1,19 @@
 # Overview
 
-### BitAgent
+**What is BitAgent?**
 
-BitAgent is a decentralized Mutil-Agent Collaboration Platform designed to launch and stake your immortal agents with onchain identity and memory — enabling them\
-to learn, evolve, and collaborate autonomously.
+BitAgent is a decentralized **Multi-Agent Collaboration Platform** that allows users to quickly deploy “Immortal” intelligent agents with the following features:
 
-BitAgent allows users to deploy autonomous agents with on-chain identity, memory, and collaborative behavior. Powered by Unibase’s infrastructure, BitAgent introduces interoperability (AIP), persistent memory (Membase), and a ve(3,3)-based incentive model.
+* **On-chain identity**: Ensures uniqueness and verifiability of agents.
+* **Permanent memory**: Stores long-term memory through Unibase’s **Membase module**, enabling sustainable learning and self-evolution.
+* **Cross-platform interoperability**: Implements interoperability between agents and humans via the **AIP protocol**.
+* **Self-evolution**: Agents continuously upgrade based on knowledge and interactions, forming unique personalities and capabilities.
 
-***
+BitAgent is powered by the **Unibase infrastructure** (AIP protocol, Membase, etc.) and integrates the **ve(3,3) incentive model** and **$UB tokenomics**, creating an autonomous, open, and sustainable agent ecosystem.
 
-### Features
+BitAgent aims to build an open AI Agent ecosystem through **personalized agents + decentralized memory + cross-platform interoperability**.
 
-* Personalized trading agents
-* Strategy agent squads with copy trade support
-* Knowledge mining and reward sharing
-* Social & interactive agents for DAOs
-
-### Roadmap
-
-* **June 2025**: Testnet complete (Agent creation, AIP, trading)
-* **August 2025**: Mainnet launch on BNBChain
-* **September 2025**: veBASE staking, voting, Bribe Pool live
-* **Q4 2025**: Membase mainnet memory verification goes live
+It is not only a tool platform but also a **community-driven and continuously evolving agent economy network**.
 
 
 
