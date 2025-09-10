@@ -1,14 +1,15 @@
 # Table of contents
 
 * [Overview](README.md)
-  * [Architecture](overview/architecture.md)
-  * [Architecture & Background](overview/architecture-and-background.md)
-  * [Tokenomics](overview/tokenomics.md)
+* [Features](features.md)
+* [Architecture & Background](architecture-and-background.md)
 * [Guide](guide/README.md)
   * [AI Agent Creation](guide/ai-agent-creation.md)
   * [Bonding Curve](guide/bonding-curve.md)
   * [Personalization](guide/personalization.md)
   * [Stake](guide/stake.md)
+* [Tokenomics](tokenomics.md)
 * [Developer](developer.md)
 * [Incentives & Governance](incentives-and-governance.md)
+* [FAQ](faq.md)
 * [Links](links.md)
