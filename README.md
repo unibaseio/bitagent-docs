@@ -1,6 +1,6 @@
 # BitAgent
 
-**Decentralized Multi-Agent Collaboration Platform** — Supports ERC-8004 and X402 native Agent launch, staking, collaboration, and autonomous payment.
+**Multi-Agent Collaboration Platform** — Supports ERC-8004 and X402 native Agent launch, staking, collaboration, and autonomous payment.
 
 ---
 
