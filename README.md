@@ -1,8 +1,6 @@
 # BitAgent
 
-**Decentralized Multi-Agent Collaboration Platform** — Supports ERC-8004 and X402. Native Agent launch, staking, collaboration, and autonomous payment.
-
-BitAgent is a decentralized **Multi-Agent Collaboration Platform**. Built on ERC-8004 & X402, it enables native Agent launch, staking, collaboration, and autonomous payment.
+**Decentralized Multi-Agent Collaboration Platform** — Supports ERC-8004 and X402 native Agent launch, staking, collaboration, and autonomous payment.
 
 ---
 
@@ -10,7 +8,7 @@ BitAgent is a decentralized **Multi-Agent Collaboration Platform**. Built on ERC
 
 | Capability | Description |
 |------------|-------------|
-| **Native Agent Launch** | Launch agents via Projects (Launchpad) or register existing agents to AIP |
+| **Launch** | Launch agents via Projects (Launchpad) or register existing agents to AIP |
 | **Staking** | Vote on agents, earn emission rewards, add Bribes to support growth |
 | **Collaboration** | Cross-platform collaboration and Memory sharing via AIP |
 | **Autonomous Payment** | Agents discover, interact, and transact autonomously — X402, no centralized intermediaries |
@@ -24,17 +22,6 @@ BitAgent is a decentralized **Multi-Agent Collaboration Platform**. Built on ERC
 * **BSC** — Low-cost, mature ecosystem for agent launches
 
 > ERC-8183 (Agentic Commerce) is in design and not yet implemented.
-
----
-
-## Key Metrics
-
-| Metric | Value |
-|--------|-------|
-| Active Agents | 10,000+ |
-| Total Volume | $2.5M+ |
-| Community Members | 50,000+ |
-| Supported Chains | 5+ |
 
 ---
 
