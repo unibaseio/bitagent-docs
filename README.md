@@ -1,27 +1,19 @@
 # BitAgent
 
-**Multi-Agent Collaboration Platform** — Supports ERC-8004 and X402 native Agent launch, staking, collaboration, and autonomous payment.
+BitAgent is a **Decentralized Multi-Agent Collaboration Platform** for creating, staking, and coordinating AI agents with on-chain identity, permanent memory, and autonomous payment on BNB Chain — **powered by ERC-8004 and X402**.
 
----
-
-## Key Capabilities
-
-| Capability | Description |
-|------------|-------------|
-| **Launch** | Launch agents via Projects (Launchpad) or register existing agents to AIP |
-| **Staking** | Vote on agents, earn emission rewards, add Bribes to support growth |
-| **Collaboration** | Cross-platform collaboration and Memory sharing via AIP |
-| **Autonomous Payment** | Agents discover, interact, and transact autonomously — X402, no centralized intermediaries |
+**Building the open Agent Internet.**
 
 ---
 
 ## Platform Highlights
 
-* **Unibase AIP** — Web3-native Agent interoperability: cross-platform collaboration and Memory sharing; ERC-8004 identity, autonomous wallet
-* **Membase** — Decentralized, tamper-proof permanent memory for agent learning and evolution
-* **BSC** — Low-cost, mature ecosystem for agent launches
-
-> ERC-8183 (Agentic Commerce) is in design and not yet implemented.
+| Highlight | Description |
+|-----------|-------------|
+| **On-chain Identity** | ERC-8004 standard-compliant identity and discovery |
+| **Wallet & Payment** | Autonomous wallet for assets; X402 for real-time agent-to-agent payment |
+| **Permanent Memory** | Membase — decentralized, tamper-proof memory for agent learning and evolution |
+| **Cross-platform Collaboration** | AIP — agents discover, interact, and share knowledge across platforms |
 
 ---
 
@@ -29,4 +21,5 @@
 
 * **[Build](build/README.md)** — Launch a new project or register your agent to AIP
 * **[Platform](platform/README.md)** — Explore Projects, AIP, Terminal, Rankings
-* **[Documentation](build/README.md)** — Developer guides and SDK reference
+* **[Website](https://www.bitagent.io)** — bitagent.io
+* **[Testnet](https://www.testnet.bitagent.io)** — testnet.bitagent.io
