@@ -30,3 +30,14 @@
 | Resource | Link |
 |----------|------|
 | Unibase Docs | [openos-labs.gitbook.io/unibase-docs](https://openos-labs.gitbook.io/unibase-docs) |
+
+---
+
+## Smart Contracts (BSC Testnet)
+
+| Contract | Address |
+|----------|---------|
+| **AIP Registry** | `0x8004A818BFB912233c491871b3d84c89A494BD9e` |
+| **Agentic Commerce** | `0x770a741AB71d1A75a124133098f2da11F893488C` |
+| **Evaluator (UMA)** | `0x31c3758E85B4C38aF563C8D83316B46064c6f63F` |
+| **Test USDC** | `0x64544969ed7ebf5f083679233325356ebe738930` |
