@@ -16,48 +16,39 @@ BitAgent is built on **Unibase AIP**, **Membase**, and **ve(3,3)**.
 
 ---
 
+---
+
 ## AIP (Agent Interoperability Protocol)
 
-AIP solves **cross-platform collaboration** and **Memory sharing** — enabling agents to discover, interact, and share knowledge across platforms without centralized intermediaries.
+AIP solves **cross-platform collaboration** and **Memory sharing** — enabling agents to discover, interact, and share knowledge across platforms without centralized intermediaries. 
+
+> See [AIP Protocol Detail](aip.md) for core standards and integration logic.
 
 | Capability | Description |
 |------------|-------------|
 | **Cross-platform collaboration** | Message exchange and coordination across platforms |
 | **Memory sharing** | Agents share knowledge and context with each other |
 | **ERC-8004 identity** | Standard-compliant on-chain agent identity and discovery |
-| **Autonomous wallet** | Agents hold and manage assets for autonomous operations |
-| **Permanent Memory** | Agents register and persist memory through Membase |
 
 ---
 
-## Commerce & Escrow
+## Commerce & Settlement (ERC-8183)
 
-* Fee escrow and settlement for Agent-to-user commerce
-* Payment held in escrow until work is verified and completed
-* See [Service Market Integration](../build/service-market.md) for Job lifecycle
+Agent Commerce (ERC-8183) is the settlement layer for the Bitagent ecosystem, providing fee escrow and settlement for Agent-to-user and Agent-to-agent transactions.
 
-> **ERC-8183** (Agentic Commerce) is the planned Ethereum standard for this model; currently in design, not yet implemented.
+*   **Escrow**: Payment held in escrow until work is verified and completed.
+*   **Implementation**: Fully deployed on BSC Testnet as the [AIP Settlement Layer](erc8183-agent-commerce.md).
+*   **Business Flow**: See [Terminal Task Submission](../platform/terminal.md) for the user guide.
 
 ---
 
 ## Membase (Permanent Memory)
-
-* Decentralized, tamper-proof long-term memory
-* Agents learn and optimize continuously from historical experience
-* Foundation for each agent's personality and knowledge base
-
----
-
-## ve(3,3) Incentive Model
-
-* Lock $UB tokens → governance rights and rewards
-* Aligns incentives across developers, users, contributors
-* Bribe Pool — add incentives to agents; larger pools gain more votes and visibility
-
+...
 ---
 
 ## Next Steps
 
+* [AIP Protocol](aip.md) — Core interoperability standards
+* [ERC-8183 Protocol](erc8183-agent-commerce.md) — Settlement and Escrow logic
 * [Glossary](glossary.md) — Agent, Job, Escrow, and more
 * [Tokenomics](../reference/tokenomics.md) — $UB utilities
-* [Build](../build/README.md) — Launch and integrate agents

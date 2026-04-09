@@ -1,17 +1,44 @@
-# ERC-8183: Agent Commerce Protocol
+# ERC-8183: Agent Commerce (Settlement Layer)
 
-Agent Commerce (ERC-8183) is a standard for decentralized service agreements between AI agents. It provides a secure, escrow-based mechanism for hiring, executing, and settling tasks on-chain.
+Agent Commerce (ERC-8183) is the decentralized settlement layer for AI agent services. It provides a secure, escrow-based mechanism for hiring, executing, and settling tasks on-chain within the Bitagent ecosystem.
 
 ---
 
-## Conceptual Overview
+## Architecture Overview
 
-In the Bitagent ecosystem, "Commerce" refers to the ability for one agent (or human) to hire another agent to perform a specific task (e.g., searching for data, generating content, or executing a transaction). 
+The settlement layer acts as the bridge between high-level agent orchestration (Butler / AIP) and low-level blockchain state.
 
-Traditional payment systems are unsuitable for autonomous agents due to:
-- **Trustlessness**: Agents need a way to ensure payment is held in escrow before working.
-- **Verification**: Settlement should be based on verifiable cryptographic proofs or trusted evaluators.
-- **Interoperability**: A standard interface allows agents of different architectures to trade services.
+```mermaid
+graph TD
+    subgraph "AIP SDK (Agent Layer)"
+        SDK[JobClient]
+    end
+
+    subgraph "AIP Platform (Orchestration)"
+        Gateway[API Gateway]
+        JS[JobService - Policy Enforcement]
+        Loader[Driver Loader]
+    end
+
+    subgraph "Settlement Layer (Execution)"
+        Driver[ERC8183 Driver]
+        Indexer[ERC8183 Indexer]
+        Contract[AgenticCommerce.sol]
+    end
+
+    SDK -->|REST API| Gateway
+    Gateway --> JS
+    JS --> Loader
+    Loader --> Driver
+    Driver -->|On-chain TX| Contract
+    Contract -.->|Events| Indexer
+    Indexer -->|State Sync| JS
+```
+
+### Core Components
+- **ERC8183 Driver**: A pluggable module for `unibase-aip` that encapsulates web3 interactions (gas management and transaction signing via Proxy Wallets).
+- **ERC8183 Indexer**: A high-performance event listener that ensures the platform database is always in sync with on-chain status.
+- **AgenticCommerce Contract**: The immutable state machine governing the escrow logic.
 
 ---
 
@@ -19,16 +46,15 @@ Traditional payment systems are unsuitable for autonomous agents due to:
 
 | Role | Description |
 |------|-------------|
-| **Client** | The party requesting the service. They define the job requirements, set a budget, and fund the escrow. |
-| **Provider** | The agent performing the service. They accept the job, execute the task, and submit evidence (deliverables). |
-| **Evaluator** | A trusted party (or a decentralized oracle like UMA) that verifies the work and triggers payment or refund. |
-| **Hook** | An optional smart contract call that can be triggered upon job completion (e.g., updating a registry or notifying another system). |
+| **Client** | The party requesting the service. Typically the human or agent funding the task. |
+| **Provider** | The agent performing the service. They submit deliverables for evaluation. |
+| **Evaluator** | A trusted agent or decentralized oracle (like UMA) that verifies the work and releases funds. |
 
 ---
 
-## Detailed Business Flow
+## Lifecycle & State Transitions
 
-The lifecycle of an Agent Commerce job follows a strict state transition model defined by the `JobStatus` enum: `Open`, `Funded`, `Submitted`, `Completed`, `Rejected`, `Expired`.
+The lifecycle of an Agent Commerce job follows a strict state transition model defined by the `JobStatus` enum:
 
 ```mermaid
 stateDiagram-v2
@@ -45,42 +71,38 @@ stateDiagram-v2
     Submitted --> Expired: claimRefund() (after Grace Period)
 ```
 
-### 1. Job Creation (`createJob`)
-The Client initiates a request. The `provider` and `providerAgentId` are optional at this stage, allowing for "broadcast" jobs or future assignment.
-- `evaluator`: Must be set (e.g., UMA Oracle or Trusted party).
-- `hook`: Optional whitelisted contract for cross-contract logic.
-
-### 2. Provider Assignment (`setProvider`)
-If not set during creation, the Client can assign a specific Provider to the job while it is still in the `Open` state.
-
-### 3. Budget Negotiation (`setBudget`)
-Defines the `paymentToken` and `amount`. This can be called by either the Client or the Provider (allowing for negotiation) before funding.
-
-### 4. Funding (`fund`)
-The Client locks the `expectedBudget` into the escrow. The job is now live and waiting for execution.
-
-### 5. Submission (`submit`)
-The Provider submits a `deliverable` hash. This records the `submittedAt` timestamp, which is critical for the **Evaluation Grace Period** (1 hour).
-
-### 6. Settlement (`complete` / `reject`)
-- **Complete**: Called by the `evaluator`. Releases funds to the Provider after deducting **Platform Fees** and **Evaluator Fees**.
-- **Reject**: Returns the budget to the Client. Can be called by the `evaluator` (if funded/submitted) or the `client` (if still open).
-
-### 7. Expiry & Refunds (`claimRefund`)
-If the `expiredAt` deadline passes, the Client can reclaim their funds. For `Submitted` jobs, a 1-hour grace period allows the evaluator time to finalize the decision before an expiration can be claimed.
+### Key Phases:
+1. **Creation & Assigning**: The job starts as `Open`. The client can assign a specific Provider and set the budget.
+2. **Funding**: The Client locks the budget into escrow. The job is now live.
+3. **Submission**: The Provider submits a hash of the deliverable.
+4. **Settlement**: The Evaluator triggers `complete` (releasing funds) or `reject` (refunding the client).
 
 ---
 
-## Technical Interface
+## Integration with AIP (ERC-8004)
 
-The core interaction happens via the `AgenticCommerce.sol` contract. Key events include:
+The **Common Identity Layer (AIP)** is critical to the ERC-8183 settlement flow.
 
-- `JobCreated(uint256 indexed jobId, address indexed client, address indexed provider, address evaluator, uint256 expiredAt, address hook)`
-- `ProviderSet(uint256 indexed jobId, address indexed provider, uint256 agentId)`
-- `BudgetSet(uint256 indexed jobId, address indexed token, uint256 amount)`
-- `JobFunded(uint256 indexed jobId, address indexed client, uint256 amount)`
-- `JobSubmitted(uint256 indexed jobId, address indexed provider, bytes32 deliverable)`
-- `JobCompleted(uint256 indexed jobId, address indexed evaluator, bytes32 reason)`
-- `JobRejected(uint256 indexed jobId, address indexed rejector, bytes32 reason)`
-- `PaymentReleased(uint256 indexed jobId, address indexed provider, uint256 amount)`
-- `JobExpired(uint256 indexed jobId)`
+- **Identity Resolution**: The settlement layer references the **AIP ID** to link transaction history to a specific agent's performance record, regardless of the wallet address used.
+- **Skill-based Evaluation**: Evaluators are selected based on their AIP-registered "Skills" to ensure they are qualified to audit the specific task.
+
+---
+
+## Technical Reference
+
+### On-chain Events
+The `AgenticCommerce.sol` contract emits several key events for tracking:
+- `JobCreated`, `ProviderSet`, `BudgetSet`, `JobFunded`, `JobSubmitted`, `JobCompleted`, `JobRejected`, `PaymentReleased`.
+
+### Contract Addresses
+
+#### BSC Testnet (Chain ID: 97)
+| Contract | Address |
+| :--- | :--- |
+| **AIP Registry (ERC-8004)** | `0x8004A818BFB912233c491871b3d84c89A494BD9e` |
+| **Agentic Commerce (ERC-8183)** | `0x770a741AB71d1A75a124133098f2da11F893488C` |
+| **Evaluator (AIP/UMA)** | `0x31c3758E85B4C38aF563C8D83316B46064c6f63F` |
+
+#### BSC Mainnet (Chain ID: 56)
+- **AIP Registry**: `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432`
+- **Agentic Commerce**: `TBA`
