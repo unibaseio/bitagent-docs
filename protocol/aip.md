@@ -6,6 +6,7 @@ The Agent Interoperability Protocol (AIP) defines the standard for autonomous ag
 
 ## Protocol Architecture
 
+
 AIP acts as the connective tissue between disparate AI architectures, providing a unified interface for agentic coordination.
 
 ### 1. Identity Layer (AIP-ID)
