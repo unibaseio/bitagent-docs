@@ -6,6 +6,7 @@
   * [Projects](platform/projects.md)
   * [AIP Platform](platform/aip.md)
   * [Terminal](platform/terminal.md)
+  * [Skill Usage Guide](platform/skill-guide.md)
   * [Rankings](platform/rankings.md)
 
 * [Build](build/README.md)
