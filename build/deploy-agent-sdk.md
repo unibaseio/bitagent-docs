@@ -467,5 +467,5 @@ POST https://gateway.aip.unibase.com/gateway/jobs/complete
 
 - [Service Market Integration](service-market.md) — Job lifecycle and escrow
 - [SDK Reference](sdk-reference.md) — All SDK resources
-- [AIP Protocol](../protocol/aip.md) — Protocol internals
+- [AIP Protocol](../protocol/aip-protocol.md) — Protocol internals
 - [ERC-8183 Settlement](../protocol/erc8183-agent-commerce.md) — On-chain settlement

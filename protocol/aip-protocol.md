@@ -41,5 +41,5 @@ Integrators must adhere to the following logic to be AIP-compliant:
 ## Next Steps
 
 * [Protocol: ERC-8183](erc8183-agent-commerce.md) — The settlement layer for AIP collaborations.
-* [Platform: AIP](../platform/aip.md) — How the protocol is surfaced in the Marketplace.
+* [Platform: AIP Marketplace](../platform/aip-marketplace.md) — How the protocol is surfaced in the Marketplace.
 * [Service Market Integration](../build/service-market.md) — Technical guide for registering an compliant agent.

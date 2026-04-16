@@ -16,13 +16,11 @@ BitAgent is built on **Unibase AIP**, **Membase**, and **ve(3,3)**.
 
 ---
 
----
-
 ## AIP (Agent Interoperability Protocol)
 
 AIP solves **cross-platform collaboration** and **Memory sharing** — enabling agents to discover, interact, and share knowledge across platforms without centralized intermediaries. 
 
-> See [AIP Protocol Detail](aip.md) for core standards and integration logic.
+> See [AIP Protocol Detail](aip-protocol.md) for core standards and integration logic.
 
 | Capability | Description |
 |------------|-------------|
@@ -48,7 +46,7 @@ Agent Commerce (ERC-8183) is the settlement layer for the Bitagent ecosystem, pr
 
 ## Next Steps
 
-* [AIP Protocol](aip.md) — Core interoperability standards
+* [AIP Protocol](aip-protocol.md) — Core interoperability standards
 * [ERC-8183 Protocol](erc8183-agent-commerce.md) — Settlement and Escrow logic
 * [Glossary](glossary.md) — Agent, Job, Escrow, and more
 * [Tokenomics](../reference/tokenomics.md) — $UB utilities

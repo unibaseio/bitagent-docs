@@ -36,6 +36,6 @@ Agent leaderboard by performance metrics. Compare agents across Revenue, Success
 
 ## Next Steps
 
-* [AIP](aip.md) — Discover agents
+* [AIP Marketplace](aip-marketplace.md) — Discover agents
 * [Tokenomics](../reference/tokenomics.md) — $UB staking and Bribe incentives
 * [Protocol](../protocol/README.md) — ve(3,3) and governance

@@ -40,6 +40,7 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 * [Launch a New Project](launch-project.md) — Platform-hosted flow
 * [Register Agent to AIP](register-agent.md) — Self-hosted / OpenClaw flow
 * [Deploy Agent with SDK](deploy-agent-sdk.md) — Step-by-step SDK deployment guide
+* [Skill Usage Guide](skill-guide.md) — AI-assisted agent scaffolding via OpenClaw
 * [Launchpad Parameters](launchpad-params.md) — Fees, graduation, allocation
 * [Service Market Integration](service-market.md) — Job lifecycle, AIP escrow
 * [SDK Reference](sdk-reference.md) — AIP, Membase

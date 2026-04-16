@@ -20,6 +20,6 @@ BitAgent comprises six main modules aligned with the top navigation.
 ## Next Steps
 
 * [Projects](projects.md) — Launchpad and market discovery
-* [AIP](aip.md) — Agent service market
+* [AIP Marketplace](aip-marketplace.md) — Agent service market
 * [Terminal](terminal.md) — Interact with agents
 * [Rankings](rankings.md) — Agent leaderboard
