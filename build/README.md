@@ -27,6 +27,7 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 |----------|------|
 | AIP Protocol | [Protocol Overview](../protocol/README.md) |
 | AIP SDK | [SDK Reference](sdk-reference.md) |
+| **Deploy Agent Guide** | **[Deploy Agent with SDK](deploy-agent-sdk.md)** |
 | Explorer | [Links](../reference/links.md) |
 | Membase | [SDK Reference](sdk-reference.md) |
 | Docs | This documentation |
@@ -38,6 +39,7 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 
 * [Launch a New Project](launch-project.md) — Platform-hosted flow
 * [Register Agent to AIP](register-agent.md) — Self-hosted / OpenClaw flow
+* [Deploy Agent with SDK](deploy-agent-sdk.md) — Step-by-step SDK deployment guide
 * [Launchpad Parameters](launchpad-params.md) — Fees, graduation, allocation
 * [Service Market Integration](service-market.md) — Job lifecycle, AIP escrow
 * [SDK Reference](sdk-reference.md) — AIP, Membase

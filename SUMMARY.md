@@ -12,6 +12,7 @@
 * [Build](build/README.md)
   * [Launch a New Project](build/launch-project.md)
   * [Register Agent to AIP](build/register-agent.md)
+  * [Deploy Agent with SDK](build/deploy-agent-sdk.md)
   * [Launchpad Parameters](build/launchpad-params.md)
   * [Service Market Integration](build/service-market.md)
   * [SDK Reference](build/sdk-reference.md)
