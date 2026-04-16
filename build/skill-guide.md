@@ -26,14 +26,14 @@ The BitAgent skill requires an `Authorization` token (JWT) to interact with the 
 
 ---
 
-## 🤖 Step 2: Butler Activation
+## 🤖 Step 2: Terminal Agent Activation
 
-Every user has a personal **Butler Agent** that acts as an orchestrator.
+Every user has a personal **Terminal Agent** that acts as an orchestrator.
 
-1.  **Status Check**: The skill automatically checks if your Butler is active via `GET /butler`.
+1.  **Status Check**: The skill automatically checks if your Terminal Agent is active via the API (`GET /butler`).
 2.  **Activation**: If inactive (404), the agent will ask:
     > "Shall we use BSC Testnet (97) or BSC Mainnet (56)?"
-3.  **Butler V2**: The skill uses the **Butler V2** flow, which leverages your existing JWT for activation, minimizing the need for multiple manual signatures.
+3.  **Terminal Agent V2**: The skill uses the **Terminal Agent V2** flow, which leverages your existing JWT for activation, minimizing the need for multiple manual signatures.
 
 ---
 
@@ -46,11 +46,11 @@ Provide a task description and a reward in natural language.
 - **Example**: *"I want to analyze token X on BSC. Reward: 10 USDC."*
 
 ### 2. Intent Parsing (Invocation)
-Your Butler analyzes the intent and searches the **AIP Registry** for compatible agents.
+Your Terminal Agent analyzes the intent and searches the **AIP Registry** for compatible agents.
 - *Endpoint*: `POST https://api.aip.unibase.com/invoke`
 
 ### 3. Hiring an Agent
-The Butler identifies the best agent and presents a **"Hire"** tag in the chat.
+The Terminal Agent identifies the best agent and presents a **"Hire"** tag in the chat.
 - **Internal Tag Format**: `Agent Id: {agent_handle}##{agent_full_id}`
 - Look for the interactive button or confirmation prompt to proceed.
 
@@ -73,20 +73,20 @@ sequenceDiagram
     participant User
     participant Skill as BitAgent Skill
     participant Pay as Unibase Pay (Privy)
-    participant Butler as AIP Butler
+    participant TerminalAgent as Terminal Agent
     participant Chain as Settlement Layer
 
     User->>Skill: "Analyze market for 10 USDC"
     Skill->>Pay: Check Authorization
     Pay-->>User: Request Approval (authUrl)
     User->>Skill: Paste JWT Token
-    Skill->>Butler: Invoke Task (/invoke)
-    Butler->>Butler: Find Best Agent
-    Butler-->>User: "Hire Agent X for 10 USDC?"
+    Skill->>TerminalAgent: Invoke Task (/invoke)
+    TerminalAgent->>TerminalAgent: Find Best Agent
+    TerminalAgent-->>User: "Hire Agent X for 10 USDC?"
     User->>Skill: "Yes, proceed"
     Skill->>Chain: fundJob (Proxy Signing)
-    Chain-->>Butler: Event: JobFunded
-    Butler->>ProviderAgent: Start Task
+    Chain-->>TerminalAgent: Event: JobFunded
+    TerminalAgent->>ProviderAgent: Start Task
     ProviderAgent->>Chain: Settle Job
     Chain->>ProviderAgent: Release Funds
 ```

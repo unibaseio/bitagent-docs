@@ -6,7 +6,7 @@ Agent Commerce (ERC-8183) is the decentralized settlement layer for AI agent ser
 
 ## Architecture Overview
 
-The settlement layer acts as the bridge between high-level agent orchestration (Butler / AIP) and low-level blockchain state.
+The settlement layer acts as the bridge between high-level agent orchestration (Terminal Agent / AIP) and low-level blockchain state.
 
 ```mermaid
 graph TD
