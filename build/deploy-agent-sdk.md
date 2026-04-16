@@ -80,28 +80,9 @@ uv pip install openai    # for LLM-based agents
 uv pip install requests  # for HTTP APIs
 ```
 
-## Step 3: Authorize with Unibase Pay
+## Step 3: Write Your Agent
 
-On first run, the SDK will prompt you with an authorization URL. But you can also pre-configure it:
-
-1. Visit [https://auth.pay.unibase.com](https://auth.pay.unibase.com) to get your auth code
-2. Open the provided URL in your browser and sign the authorization
-3. Copy the returned Bearer Token
-4. Create a `.env` file in the project root:
-
-```env
-UNIBASE_PROXY_AUTH=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...your_token_here
-```
-
-> **Important**: The variable name must be exactly `UNIBASE_PROXY_AUTH`. Other names like `UNIBASE_TOKEN` will NOT work.
-
-The token is a JWT containing your wallet address in the `sub` claim. The SDK extracts this to use as `user_id` for agent registration.
-
----
-
-## Step 4: Write Your Agent
-
-Create `agent.py` in the project root. Here's a complete example:
+Create `agent.py` in the project root **first** — authorization happens when you run it for the first time.
 
 ### Example: Translation Agent
 
@@ -296,15 +277,60 @@ if __name__ == "__main__":
 
 ---
 
-## Step 5: Run the Agent
+## Step 4: First Run & Authorization
 
-### Development (Foreground)
+On the first run, the SDK will output an **authorization URL** in the terminal. You must complete this interactive flow to obtain your `UNIBASE_PROXY_AUTH` token.
+
+### 4.1 Start the agent
 
 ```bash
 uv run agent.py
 ```
 
-You should see output like:
+### 4.2 Complete the authorization
+
+The terminal will display the interactive authorization flow:
+
+```
+===== Step 1: Authorization =====
+
+[1/3] Fetching authorization URL...
+  ✓ Got auth URL
+
+[2/3] Authorization Required
+  I need your authorization to access the Terminal features.
+
+  👉 Please click this link to approve:
+
+  https://auth.pay.unibase.com?code=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+  After approval, you'll receive an Authorization token.
+
+  👉 Paste your Authorization token below and press Enter:
+
+  Token:
+```
+
+1. **Open the link** in your browser
+2. **Sign the authorization** with your wallet
+3. **Copy the JWT token** returned after signing
+4. **Paste the token** into the `Token:` prompt and press Enter
+
+### 4.3 Save the token for future runs
+
+Once you have the token, save it to `.env` so you don't need to re-authorize every time:
+
+```env
+UNIBASE_PROXY_AUTH=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...your_token_here
+```
+
+> **Important**: The variable name must be exactly `UNIBASE_PROXY_AUTH`. Other names like `UNIBASE_TOKEN` will NOT work.
+
+The token is a JWT containing your wallet address in the `sub` claim. The SDK extracts this to use as `user_id` for agent registration.
+
+### 4.4 Verify registration
+
+After authorization, the agent should output:
 
 ```
 A2A Server starting at http://0.0.0.0:8201
@@ -315,7 +341,11 @@ Starting Gateway JOB-QUEUE polling loop
 Uvicorn running on http://0.0.0.0:8201
 ```
 
-### Production (Background)
+If you see these lines, your agent is live and polling for jobs! Press `Ctrl+C` to stop.
+
+---
+
+## Step 5: Production Deployment
 
 For persistent deployment, run as a background daemon:
 
