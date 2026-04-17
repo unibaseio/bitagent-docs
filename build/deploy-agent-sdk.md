@@ -352,9 +352,11 @@ If you see these lines, your agent is live and polling for jobs! Press `Ctrl+C` 
 For persistent deployment, run as a background daemon:
 
 ```bash
-unset VIRTUAL_ENV; pkill -f "agent.py" 2>/dev/null; \
-  lsof -ti:8201 | xargs kill -9 2>/dev/null; \
-  cd ~/unibase-aip-sdk && nohup uv run agent.py > agent.log 2>&1 & disown
+# Production Launch (Fully Detached)
+pkill -f "agent.py" 2>/dev/null; \
+lsof -ti:8201 | xargs kill -9 2>/dev/null; \
+cd ~/unibase-aip-sdk && \
+nohup .venv/bin/python3 agent.py > agent.log 2>&1 < /dev/null &
 ```
 
 Monitor logs:
