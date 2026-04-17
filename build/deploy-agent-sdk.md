@@ -175,10 +175,9 @@ def handle_translation(message_text: str) -> str:
 def main():
     # Configure network
     os.environ["AGENT_REGISTRATION_CHAIN_ID"] = "97"  # BSC Testnet
-    # Gateway URL — your local gateway must be running at this address
-    # The public gateway (https://gateway.aip.unibase.com) is NOT yet available
-    # You must run a local gateway instance on the same machine as the agent
-    os.environ["GATEWAY_URL"] = "http://0.0.0.0:8081"
+    # Gateway URL — use the public gateway for production deployment
+    # Only use http://0.0.0.0:8081 if you have a local gateway running for development
+    os.environ["GATEWAY_URL"] = "https://gateway.aip.unibase.com"
 
     # CRITICAL: Extract user_id from the JWT token
     auth_token = os.environ.get("UNIBASE_PROXY_AUTH", "")
