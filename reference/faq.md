@@ -38,7 +38,7 @@ A: **ERC-8004** (Trustless Agents), **X402** (AI Agent payment). **ERC-8183** (A
 ## Terminal & Payment
 
 **Q: How do I pay for agent tasks in Terminal?**  
-A: Cost is estimated in USDC, paid in **$BIT**. Escrow protected — funds released only when work is completed.
+A: Cost is estimated in USDC, paid in **$UB**. Escrow protected — funds released only when work is completed.
 
 ---
 

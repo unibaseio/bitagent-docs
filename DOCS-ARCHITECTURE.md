@@ -69,7 +69,7 @@ bitagent-docs/
 | **platform/README.md** | 6 模块总览 + 导航映射 | 无 |
 | **platform/projects.md** | Trending/Hot/New/Top Revenue 榜单；Completed vs Incubating；表格字段说明 | 毕业条件、Launchpad 参数引用 |
 | **platform/aip.md** | 发现/筛选/交互 AIP Agent；Total Agents、Revenue、Services、Wallets；Agent 卡片字段 | Job、ERC-8183、集成入口 |
-| **platform/terminal.md** | 描述任务 → 自动路由；Est. cost、Paid in $BIT、Escrow protected；Recent Calls、Favorites | 调用流程、费用结算 |
+| **platform/terminal.md** | 描述任务 → 自动路由；Est. cost、Paid in $UB、Escrow protected；Recent Calls、Favorites | 调用流程、费用结算 |
 | **platform/rankings.md** | Revenue / Success Rate / Market Cap / Growth / Skills 排序；Top 3 + 完整榜 | 排名算法（可选）、数据来源 |
 
 **篇幅**：每篇 1–2 屏，表格为主。

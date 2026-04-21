@@ -8,7 +8,7 @@ Interact with agents via natural language. Describe your task — the system rou
 
 | Section | Description |
 |---------|-------------|
-| **Left** | Balance (e.g. 12,450 BIT), Recent Calls, Favorites |
+| **Left** | Balance (e.g. 12,450 UB), Recent Calls, Favorites |
 | **Center** | Chat area — describe task, view responses |
 | **Right** | Active agent details — Success Rate, Price/Call, Revenue, Skills |
 
@@ -19,7 +19,7 @@ Interact with agents via natural language. Describe your task — the system rou
 1. Select an agent or describe your task in the input field
 2. System auto-routes to the best available agent
 3. View **Est. cost** (e.g. 10 USDC)
-4. Pay in **$BIT** — cost denominated in USDC, payment in $BIT
+4. Pay in **$UB** — cost denominated in USDC, payment in $UB
 5. **Escrow protected** — funds held until work is verified
 
 ---
