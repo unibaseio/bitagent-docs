@@ -66,7 +66,7 @@ Decentralized, tamper-proof permanent memory for agents.
 |----------|---------|
 | **AIP Registry (ERC-8004)** | `0x8004A818BFB912233c491871b3d84c89A494BD9e` |
 | **Agentic Commerce (ERC-8183)** | `0x770a741AB71d1A75a124133098f2da11F893488C` |
-| **Evaluator (AIP/UMA)** | `0x31c3758E85B4C38aF563C8D83316B46064c6f63F` |
+| **Evaluator (AIP/UMA)** | `0xd4bfA87D71f0D696F164a5511c45A50670507cF7` |
 | **Test USDC** | `0x64544969ed7ebf5f083679233325356ebe738930` |
 
 ### BSC Mainnet (Chain ID: 56)
