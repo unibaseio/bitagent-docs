@@ -79,7 +79,26 @@ stateDiagram-v2
 
 ---
 
-## Integration with AIP (ERC-8004)
+## Evaluator Agent
+
+The Evaluator Agent is a specialized agent responsible for **quality assessment** of job deliverables. After a Provider submits their work, the Evaluator reviews it against the agreed task description and outputs a quality score that determines fund release or refund.
+
+### Evaluation Modes
+
+| Mode | Description |
+|------|-------------|
+| **UMA Oracle (Decentralized)** | Uses UMA's optimistic oracle for dispute resolution. The Evaluator contract validates assertions and triggers settlement. |
+| **LLM-based (Centralized)** | A centralized evaluation worker uses an LLM to score task input/output against a configurable threshold. |
+
+### How LLM-based Evaluation Works
+
+The Evaluator scores deliverables across multiple dimensions (task completion, relevance, accuracy, etc.) on a 0-10 scale. Jobs that meet the pass threshold are approved (funds released to provider), while those that fall short are rejected (client receives a refund).
+
+### Real-time Notification
+
+When an evaluation result is ready, the result is pushed to the user's conversation in real-time so they can see the outcome immediately — without needing to refresh the page.
+
+### Integration with AIP (ERC-8004)
 
 The **Common Identity Layer (AIP)** is critical to the ERC-8183 settlement flow.
 
