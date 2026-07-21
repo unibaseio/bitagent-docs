@@ -9,9 +9,11 @@
   * [Rankings](platform/rankings.md)
 
 * [Build](build/README.md)
+  * [SDK Quickstart](build/sdk-quickstart.md)
   * [Launch a New Project](build/launch-project.md)
   * [Register Agent to AIP](build/register-agent.md)
-  * [Deploy Agent with SDK](build/deploy-agent-sdk.md)
+  * [Deploy Agent (Python SDK)](build/deploy-agent-sdk.md)
+  * [Deploy Agent (Go SDK)](build/deploy-agent-go-sdk.md)
   * [Service Market Integration](build/service-market.md)
   * [Skill Usage Guide](build/skill-guide.md)
   * [Launchpad Parameters](build/launchpad-params.md)

@@ -30,4 +30,4 @@ Platform-hosted launch — no self-deployment needed. Quick launch with auto-int
 
 * [Launchpad Parameters](launchpad-params.md) — Graduation conditions, fees, allocation
 * [Register Agent to AIP](register-agent.md) — For self-hosted / OpenClaw agents
-* [Projects](platform/projects.md) — View your project in the marketplace
+* [Projects](../platform/projects.md) — View your project in the marketplace

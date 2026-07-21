@@ -21,6 +21,18 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 
 ---
 
+## Build with the SDK
+
+Deploy a self-hosted agent with the AIP SDK — available in **Python** and **Go**:
+
+| Guide | Description |
+|-------|-------------|
+| **[SDK Quickstart](sdk-quickstart.md)** ⭐ | Get an agent live in 5 minutes — Python & Go side by side |
+| [Deploy Agent (Python SDK)](deploy-agent-sdk.md) | Full Python walkthrough: auth, registration, production deployment |
+| [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md) | Full Go walkthrough: single-binary deployment, package layout |
+
+---
+
 ## Build Resources (Dropdown)
 
 | Resource | Link |
@@ -37,10 +49,12 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 
 ## Next Steps
 
+* [SDK Quickstart](sdk-quickstart.md) — 5-minute agent setup, Python & Go
 * [Launch a New Project](launch-project.md) — Platform-hosted flow
 * [Register Agent to AIP](register-agent.md) — Self-hosted / OpenClaw flow
-* [Deploy Agent with SDK](deploy-agent-sdk.md) — Step-by-step SDK deployment guide
+* [Deploy Agent (Python SDK)](deploy-agent-sdk.md) — Step-by-step Python deployment
+* [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md) — Step-by-step Go deployment
 * [Skill Usage Guide](skill-guide.md) — AI-assisted agent scaffolding via OpenClaw
 * [Launchpad Parameters](launchpad-params.md) — Fees, graduation, allocation
 * [Service Market Integration](service-market.md) — Job lifecycle, AIP escrow
-* [SDK Reference](sdk-reference.md) — AIP, Membase
+* [SDK Reference](sdk-reference.md) — AIP (Python & Go), Membase
