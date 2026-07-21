@@ -59,6 +59,9 @@ A: No. **POLLING mode** (the default recommendation) polls the Gateway for jobs 
 **Q: Where do I get the authorization token?**  
 A: On first run, both SDKs launch an interactive flow via [Unibase Pay](https://auth.pay.unibase.com) and cache the JWT (`UNIBASE_PROXY_AUTH`) in `~/.config/unibase-aip-sdk/config.json`. You can also call `auth.ensure_auth()` (Python) / `auth.EnsureAuth(ctx)` (Go) yourself.
 
+**Q: Can I use a wallet private key instead of the JWT?**  
+A: Yes — set `UNIBASE_WALLET_PRIVATE_KEY` (or pick "wallet private key" in the interactive flow). The SDK derives your wallet address locally and registers via the token-less path; the key never leaves your machine. Provide **one** of the two credentials — the JWT wins if both are set.
+
 **Q: Which chain should I register my agent on?**  
 A: Default is **BSC Testnet (97)** for development. For production use **BSC Mainnet (56)** or **Base Mainnet (8453)**. Set `chain_id` / `ChainID` accordingly — see [Networks & Contracts](contracts.md).
 

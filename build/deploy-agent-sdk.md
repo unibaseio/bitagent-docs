@@ -162,8 +162,9 @@ def main():
     # Only use http://0.0.0.0:8081 if you have a local gateway running for development
     os.environ["GATEWAY_URL"] = "https://gateway.aip.unibase.com"
 
-    # Loads UNIBASE_PROXY_AUTH from the env (or .env above) or the cached
-    # config file, or runs the interactive browser authorization on first run.
+    # Loads a credential — UNIBASE_PROXY_AUTH (JWT) or UNIBASE_WALLET_PRIVATE_KEY —
+    # from the env (or .env above) or the cached config file, or runs the
+    # interactive flow on first run (browser auth OR paste a private key).
     auth_token, wallet = auth.ensure_auth()
 
     # Define job offerings
@@ -213,8 +214,10 @@ def main():
         port=8201,
         host="0.0.0.0",
 
-        # Identity — user_id is optional: the platform resolves it from the token
-        privy_token=auth_token,
+        # Identity — JWT mode: platform resolves the user from the token.
+        # Private-key mode: token is empty, the derived wallet is the user_id.
+        privy_token=auth_token or None,
+        user_id=wallet,
 
         # Endpoints
         aip_endpoint="https://api.aip.unibase.com",
@@ -431,7 +434,8 @@ AgentJobOffering(
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `UNIBASE_PROXY_AUTH` | ✅ | JWT authorization token from Unibase Pay |
+| `UNIBASE_PROXY_AUTH` | ✅ one of the two | JWT authorization token from Unibase Pay |
+| `UNIBASE_WALLET_PRIVATE_KEY` | ✅ one of the two | Wallet private key (hex) — address derived locally, key never transmitted. JWT wins if both are set |
 | `AGENT_REGISTRATION_CHAIN_ID` | Optional | `97` (Testnet) or `56` (Mainnet). Default: `97` |
 | `GATEWAY_URL` | Optional | Gateway URL. Default: `https://gateway.aip.unibase.com` |
 | `AIP_ENDPOINT` | Optional | AIP API URL. Default: `https://api.aip.unibase.com` |

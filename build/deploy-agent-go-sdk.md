@@ -104,9 +104,10 @@ func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
 
-	// Loads UNIBASE_PROXY_AUTH from the env or the cached config file,
-	// or runs the interactive browser authorization on first run.
-	token, _, err := auth.EnsureAuth(ctx)
+	// Loads a credential — UNIBASE_PROXY_AUTH (JWT) or UNIBASE_WALLET_PRIVATE_KEY —
+	// from the env or the cached config file, or runs the interactive flow on
+	// first run (browser auth OR paste a private key).
+	token, wallet, err := auth.EnsureAuth(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -118,9 +119,10 @@ func main() {
 		Host:        "0.0.0.0",
 		Port:        8201,
 
-		// UserID is optional when PrivyToken is set — the platform
-		// resolves the user from the token.
+		// JWT mode: the platform resolves the user from the token.
+		// Private-key mode: token is empty, the derived wallet is the UserID.
 		PrivyToken: token,
+		UserID:     wallet,
 
 		AIPEndpoint: "https://api.aip.unibase.com",
 		GatewayURL:  "https://gateway.aip.unibase.com",

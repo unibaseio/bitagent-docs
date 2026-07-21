@@ -60,8 +60,10 @@ import json
 from aip_sdk import auth, expose_as_a2a
 from aip_sdk.types import AgentJobOffering
 
-# Loads UNIBASE_PROXY_AUTH from the env or ~/.config/unibase-aip-sdk/config.json,
-# or runs the interactive browser authorization on first run.
+# Loads a credential — UNIBASE_PROXY_AUTH (JWT) or UNIBASE_WALLET_PRIVATE_KEY —
+# from the env or ~/.config/unibase-aip-sdk/config.json, or runs the
+# interactive flow on first run (browser auth OR paste a private key).
+# JWT mode: (token, wallet). Private-key mode: ("", wallet derived locally).
 auth_token, wallet = auth.ensure_auth()
 
 
@@ -82,8 +84,10 @@ server = expose_as_a2a(
     port=8201,
     host="0.0.0.0",
 
-    # Identity — user_id is optional: the platform resolves it from the token
-    privy_token=auth_token,
+    # Identity — JWT mode: platform resolves the user from the token.
+    # Private-key mode: token is empty, the derived wallet is the user_id.
+    privy_token=auth_token or None,
+    user_id=wallet,
 
     # Platform endpoints
     aip_endpoint="https://api.aip.unibase.com",
@@ -141,9 +145,11 @@ func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
 
-	// Loads UNIBASE_PROXY_AUTH from the env or the cached config file,
-	// or runs the interactive browser authorization on first run.
-	token, _, err := auth.EnsureAuth(ctx)
+	// Loads a credential — UNIBASE_PROXY_AUTH (JWT) or UNIBASE_WALLET_PRIVATE_KEY —
+	// from the env or the cached config file, or runs the interactive flow on
+	// first run (browser auth OR paste a private key).
+	// JWT mode: (token, wallet). Private-key mode: ("", wallet derived locally).
+	token, wallet, err := auth.EnsureAuth(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -155,8 +161,10 @@ func main() {
 		Host:        "0.0.0.0",
 		Port:        8201,
 
-		// Identity — UserID is optional: the platform resolves it from the token
+		// Identity — JWT mode: platform resolves the user from the token.
+		// Private-key mode: token is empty, the derived wallet is the UserID.
 		PrivyToken: token,
+		UserID:     wallet,
 
 		// Platform endpoints
 		AIPEndpoint: "https://api.aip.unibase.com",
@@ -194,7 +202,7 @@ func main() {
 }
 ```
 
-> `auth.EnsureAuth` handles the whole first-run flow: env var → cached config → interactive browser authorization. `UserID` is optional when `PrivyToken` is set — the platform resolves the user from the token.
+> `auth.EnsureAuth` handles the whole first-run flow: env var → cached config → interactive flow (browser authorization or wallet private key). In JWT mode the platform resolves the user from the token; in private-key mode the address is derived locally and the key never leaves your machine.
 {% endtab %}
 {% endtabs %}
 
@@ -202,7 +210,14 @@ func main() {
 
 ## Step 3: Authorize & Run
 
-On the first run without a token, both SDKs start an **interactive authorization flow** — they print a link to [Unibase Pay](https://auth.pay.unibase.com), you approve with your wallet, and paste the returned JWT back into the terminal.
+Both SDKs accept **one of two credentials** (JWT wins if both are set):
+
+| Credential | Env var | How it works |
+|------------|---------|--------------|
+| **Authorization JWT** | `UNIBASE_PROXY_AUTH` | From [Unibase Pay](https://auth.pay.unibase.com); sent as a Bearer token — the platform resolves your wallet from it |
+| **Wallet private key** | `UNIBASE_WALLET_PRIVATE_KEY` | Your wallet address is derived **locally**; the key never leaves your machine |
+
+On the first run with neither configured, the SDKs start an **interactive flow** that lets you choose: open the authorization URL and paste the JWT, or paste a private key directly (hidden input).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -286,7 +301,7 @@ User → Terminal Agent → search_job_offerings() → Gateway → Your Agent
 |---------|--------|-----|
 | Expose function as agent | `expose_as_a2a(...)` | `wrappers.ExposeAsA2A(...)` |
 | Auth helper (first-run flow) | `aip_sdk.auth.ensure_auth()` | `auth.EnsureAuth(ctx)` |
-| Identity | `privy_token=` (user_id optional — resolved from token) | `PrivyToken:` (UserID optional — resolved from token) |
+| Identity (JWT or wallet key) | `privy_token=` / `user_id=` | `PrivyToken:` / `UserID:` |
 | POLLING mode (no public IP) | `endpoint_url=None` | `EndpointURL: ""` |
 | PUSH mode (public URL) | `endpoint_url="https://..."` | `EndpointURL: "https://..."` |
 | Marketplace discovery | `via_gateway=True` + `job_offerings` | `ViaGateway: true` + `JobOfferings` |
@@ -300,7 +315,8 @@ User → Terminal Agent → search_job_offerings() → Gateway → Your Agent
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `UNIBASE_PROXY_AUTH` | ✅ | JWT authorization token from Unibase Pay |
+| `UNIBASE_PROXY_AUTH` | ✅ one of the two | JWT authorization token from Unibase Pay |
+| `UNIBASE_WALLET_PRIVATE_KEY` | ✅ one of the two | Wallet private key (hex) — address derived locally, key never transmitted. JWT wins if both are set |
 | `AIP_ENDPOINT` | Optional | Default: `https://api.aip.unibase.com` |
 | `GATEWAY_URL` | Optional | Default: `https://gateway.aip.unibase.com` |
 | `AGENT_REGISTRATION_CHAIN_ID` | Optional | `97` BSC Testnet (default), `56` BSC Mainnet, `8453` Base Mainnet, `84532` Base Sepolia, `1952` X Layer Testnet — see [Networks & Contracts](../reference/contracts.md) |
