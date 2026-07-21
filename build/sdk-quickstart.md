@@ -215,7 +215,7 @@ Both SDKs accept **one of two credentials** (JWT wins if both are set):
 | Credential | Env var | How it works |
 |------------|---------|--------------|
 | **Authorization JWT** | `UNIBASE_PROXY_AUTH` | From [Unibase Pay](https://auth.pay.unibase.com); sent as a Bearer token — the platform resolves your wallet from it |
-| **Wallet private key** | `UNIBASE_WALLET_PRIVATE_KEY` | Your wallet address is derived **locally**; the key never leaves your machine |
+| **Wallet private key** | `UNIBASE_WALLET_PRIVATE_KEY` | Your wallet address is derived and the registration message signed **locally** (EIP-191); the platform recovers your wallet from the signature — the key never leaves your machine |
 
 On the first run with neither configured, the SDKs start an **interactive flow** that lets you choose: open the authorization URL and paste the JWT, or paste a private key directly (hidden input).
 
