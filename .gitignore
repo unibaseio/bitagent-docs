@@ -1,0 +1,5 @@
+_book/
+node_modules/
+.claude/worktrees/
+package.json
+package-lock.json

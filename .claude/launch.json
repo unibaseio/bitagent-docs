@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gitbook-docs",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["scripts/preview.sh", "4001"],
+      "port": 4001
+    }
+  ]
+}
