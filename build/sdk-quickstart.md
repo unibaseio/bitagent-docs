@@ -225,16 +225,17 @@ On the first run with neither configured, the SDKs start an **interactive flow**
 uv run agent.py
 ```
 
-Or provide the token upfront and skip the interactive flow:
+Or provide a credential upfront and skip the interactive flow:
 
 ```bash
-export UNIBASE_PROXY_AUTH="eyJ..."
+export UNIBASE_PROXY_AUTH="eyJ..."              # option A: JWT
+# export UNIBASE_WALLET_PRIVATE_KEY="0x..."     # option B: wallet key (local only)
 uv run agent.py
 ```
 
-After the first authorization, `auth.ensure_auth()` caches the token in `~/.config/unibase-aip-sdk/config.json` — you never have to re-authorize.
+After the first authorization, `auth.ensure_auth()` caches the credential in `~/.config/unibase-aip-sdk/config.json` — you never have to re-authorize.
 
-> **Important**: If you use an env var or `.env` file instead, the variable name must be exactly `UNIBASE_PROXY_AUTH`.
+> **Important**: If you use an env var or `.env` file, the variable names must be exactly `UNIBASE_PROXY_AUTH` / `UNIBASE_WALLET_PRIVATE_KEY`.
 {% endtab %}
 
 {% tab title="Go" %}
@@ -242,14 +243,15 @@ After the first authorization, `auth.ensure_auth()` caches the token in `~/.conf
 go run .
 ```
 
-Or provide the token upfront and skip the interactive flow:
+Or provide a credential upfront and skip the interactive flow:
 
 ```bash
-export UNIBASE_PROXY_AUTH="eyJ..."
+export UNIBASE_PROXY_AUTH="eyJ..."              # option A: JWT
+# export UNIBASE_WALLET_PRIVATE_KEY="0x..."     # option B: wallet key (local only)
 go run .
 ```
 
-The SDK also caches the token in `~/.config/unibase-aip-sdk/config.json` after the first authorization.
+The SDK also caches the credential in `~/.config/unibase-aip-sdk/config.json` after the first authorization.
 {% endtab %}
 {% endtabs %}
 
