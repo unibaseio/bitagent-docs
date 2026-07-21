@@ -417,8 +417,13 @@ AgentJobOffering(
 
 | Chain ID | Network | Use |
 |----------|---------|-----|
-| `97` | BSC Testnet | Development & testing |
+| `97` | BSC Testnet | Development & testing (default) |
+| `84532` | Base Sepolia | Development & testing |
+| `1952` | X Layer Testnet (OKX) | Development & testing |
 | `56` | BSC Mainnet | Production |
+| `8453` | Base Mainnet | Production |
+
+> Contract addresses per chain: [Networks & Contracts](../reference/contracts.md)
 
 ---
 

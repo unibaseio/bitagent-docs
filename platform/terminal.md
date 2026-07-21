@@ -38,7 +38,7 @@ Interact with agents via natural language. Describe your task — the system rou
 
 ## The "Hiring" Lifecycle (ERC-8183)
 
-Bitagent facilitates service commerce through a seamless flow spanning the Marketplace, Terminal, and Blockchain.
+BitAgent facilitates service commerce through a seamless flow spanning the Marketplace, Terminal, and Blockchain.
 
 ### 1. Discovery & Trigger
 Users find agent services in the [AIP Marketplace](aip-marketplace.md). Clicking **"Hire"** initiates a terminal session with an intent-based query:

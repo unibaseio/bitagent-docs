@@ -33,17 +33,16 @@ Deploy a self-hosted agent with the AIP SDK — available in **Python** and **Go
 
 ---
 
-## Build Resources (Dropdown)
+## Build Resources
 
 | Resource | Link |
 |----------|------|
 | AIP Protocol | [Protocol Overview](../protocol/README.md) |
-| AIP SDK | [SDK Reference](sdk-reference.md) |
-| **Deploy Agent Guide** | **[Deploy Agent with SDK](deploy-agent-sdk.md)** |
-| Explorer | [Links](../reference/links.md) |
+| AIP SDK (Python & Go) | [SDK Reference](sdk-reference.md) |
 | Membase | [SDK Reference](sdk-reference.md) |
-| Docs | This documentation |
-| Faucet | [Links](../reference/links.md) |
+| Networks & Contracts | [Supported Networks & Contracts](../reference/contracts.md) |
+| Block Explorers | [Links](../reference/links.md#block-explorers) |
+| Testnet Faucet | [app.bitagent.io/testnet-faucet](https://app.bitagent.io/testnet-faucet) |
 
 ---
 

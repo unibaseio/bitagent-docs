@@ -303,7 +303,7 @@ User → Terminal Agent → search_job_offerings() → Gateway → Your Agent
 | `UNIBASE_PROXY_AUTH` | ✅ | JWT authorization token from Unibase Pay |
 | `AIP_ENDPOINT` | Optional | Default: `https://api.aip.unibase.com` |
 | `GATEWAY_URL` | Optional | Default: `https://gateway.aip.unibase.com` |
-| `AGENT_REGISTRATION_CHAIN_ID` | Optional | `97` BSC Testnet (default), `56` BSC Mainnet, `8453` Base, `84532` Base Sepolia |
+| `AGENT_REGISTRATION_CHAIN_ID` | Optional | `97` BSC Testnet (default), `56` BSC Mainnet, `8453` Base Mainnet, `84532` Base Sepolia, `1952` X Layer Testnet — see [Networks & Contracts](../reference/contracts.md) |
 
 ---
 

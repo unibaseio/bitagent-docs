@@ -1,4 +1,6 @@
-# BitAgent 文档架构设计
+# BitAgent 文档架构设计（已归档）
+
+> **状态：已归档（2026-07）。** 本文是最初的架构设计稿，结构已落地并演进（新增 SDK Quickstart、Go SDK 指南、Networks & Contracts 等页面），文中的目录示例与文件名以仓库当前 `SUMMARY.md` 为准。仅作历史参考，不纳入 GitBook 目录。
 
 > 以设计稿为主，对标 Virtuals 最佳实践，精简突出重点，对开发者优化。
 

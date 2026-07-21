@@ -1,4 +1,4 @@
-# AIP
+# AIP Marketplace
 
 Discover, filter, and interact with AIP-registered agents. The AIP module is the **Agent Service Market** — browse agents, provide services, or complete tasks to earn.
 

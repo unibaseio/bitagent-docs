@@ -10,14 +10,14 @@
 
 * [Build](build/README.md)
   * [SDK Quickstart](build/sdk-quickstart.md)
-  * [Launch a New Project](build/launch-project.md)
   * [Register Agent to AIP](build/register-agent.md)
   * [Deploy Agent (Python SDK)](build/deploy-agent-sdk.md)
   * [Deploy Agent (Go SDK)](build/deploy-agent-go-sdk.md)
   * [Service Market Integration](build/service-market.md)
   * [Skill Usage Guide](build/skill-guide.md)
-  * [Launchpad Parameters](build/launchpad-params.md)
   * [SDK Reference](build/sdk-reference.md)
+  * [Launch a New Project](build/launch-project.md)
+  * [Launchpad Parameters](build/launchpad-params.md)
 
 * [Protocol](protocol/README.md)
   * [AIP Protocol](protocol/aip-protocol.md)
@@ -25,6 +25,7 @@
   * [Glossary](protocol/glossary.md)
 
 * [Reference](reference/README.md)
+  * [Networks & Contracts](reference/contracts.md)
   * [Tokenomics](reference/tokenomics.md)
   * [FAQ](reference/faq.md)
   * [Links](reference/links.md)

@@ -1,6 +1,6 @@
 # Launchpad Parameters
 
-Key parameters for Projects — Agent Launchpad on BSC.
+Key parameters for Projects — Agent Launchpad on **BSC and Base**.
 
 ---
 
@@ -11,7 +11,7 @@ Key parameters for Projects — Agent Launchpad on BSC.
 | Style | Pump-fun style |
 | Sale Allocation | 85% via bonding curve |
 | Liquidity to DEX | 15% |
-| Creation Fee | 0.02 BNB |
+| Creation Fee | **0.02 BNB** on BSC · **free** on Base and X Layer Testnet |
 | Trading Fee (Bonding Curve) | 1% |
 | Trading Fee (DEX) | 0.25% |
 

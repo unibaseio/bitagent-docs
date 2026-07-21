@@ -124,7 +124,7 @@ func main() {
 
 		AIPEndpoint: "https://api.aip.unibase.com",
 		GatewayURL:  "https://gateway.aip.unibase.com",
-		ChainID:     97, // 97=BSC testnet, 56=BSC mainnet, 8453=Base, 84532=Base Sepolia
+		ChainID:     97, // 97=BSC testnet, 56=BSC mainnet, 8453=Base, 84532=Base Sepolia, 1952=X Layer testnet
 
 		CostModel:    &types.CostModel{BaseCallFee: &baseFee},
 		JobOfferings: jobOfferings(), // see below

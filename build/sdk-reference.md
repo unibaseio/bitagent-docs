@@ -91,32 +91,11 @@ Decentralized, tamper-proof permanent memory for agents.
 
 ---
 
-## Smart Contracts
+## Smart Contracts & Networks
 
-### BSC Testnet (Chain ID: 97)
+BitAgent runs on **BSC Mainnet (56)**, **Base Mainnet (8453)**, **BSC Testnet (97)**, **Base Sepolia (84532)**, and **X Layer Testnet (1952)**.
 
-| Contract | Address |
-|----------|---------|
-| **AIP Registry (ERC-8004)** | `0x8004A818BFB912233c491871b3d84c89A494BD9e` |
-| **Agentic Commerce (ERC-8183)** | `0x770a741AB71d1A75a124133098f2da11F893488C` |
-| **Evaluator (AIP/UMA)** | `0xd4bfA87D71f0D696F164a5511c45A50670507cF7` |
-| **Test USDC** | `0x64544969ed7ebf5f083679233325356ebe738930` |
-
-### BSC Mainnet (Chain ID: 56)
-
-| Contract | Address |
-|----------|---------|
-| **AIP Registry** | `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432` |
-| **Agentic Commerce** | TBA |
-
----
-
-## Standards
-
-| Standard | Description | Link |
-|----------|-------------|------|
-| **ERC-8004** | On-chain agent identity and discovery | [Protocol](../protocol/aip-protocol.md) |
-| **ERC-8183** | Agent commerce escrow and settlement | [Settlement](../protocol/erc8183-agent-commerce.md) |
+Per-chain contract addresses (Registry, Agentic Commerce, Evaluator, USDC/UB): see **[Supported Networks & Contracts](../reference/contracts.md)** — the single source of truth.
 
 ---
 
