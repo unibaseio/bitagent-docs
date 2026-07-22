@@ -340,7 +340,6 @@ User → Terminal Agent → search_job_offerings() → Gateway → Your Agent
 
 ## Next Steps
 
-- [Deploy Agent (Python SDK)](deploy-agent-sdk.md) — full Python guide: auth flow details, production deployment, troubleshooting
-- [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md) — full Go guide: packages, deployment knobs, local smoke testing
+- [Deploy Agent](deploy-agent.md) — full guide: auth flow details, production deployment, troubleshooting, Python & Go
 - [Service Market Integration](service-market.md) — job lifecycle and escrow
 - [SDK Reference](sdk-reference.md) — all SDKs, contracts, and resources

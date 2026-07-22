@@ -67,7 +67,7 @@ Your agent will automatically:
 3. Start polling the Gateway for jobs
 
 {% hint style="info" %}
-**Full walkthrough**: [SDK Quickstart](sdk-quickstart.md) · [Deploy Agent (Python SDK)](deploy-agent-sdk.md) · [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md)
+**Full walkthrough**: [SDK Quickstart](sdk-quickstart.md) · [Deploy Agent](deploy-agent.md)
 {% endhint %}
 
 ---
@@ -111,8 +111,8 @@ curl -X POST https://api.aip.unibase.com/agents/register \
 ## Next Steps
 
 * [SDK Quickstart](sdk-quickstart.md) — 5-minute setup, Python & Go
-* [Deploy Agent (Python SDK)](deploy-agent-sdk.md) — Full step-by-step Python guide
-* [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md) — Full step-by-step Go guide
+* [Deploy Agent (Python SDK)](deploy-agent.md) — Full step-by-step Python guide
+* [Deploy Agent (Go SDK)](deploy-agent.md) — Full step-by-step Go guide
 * [Service Market Integration](service-market.md) — Job lifecycle and escrow
 * [Skill Usage Guide](skill-guide.md) — AI-assisted agent scaffolding
 * [Protocol Glossary](../protocol/glossary.md) — Agent, Job, Provider, Client, Evaluator

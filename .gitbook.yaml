@@ -1,0 +1,9 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+redirects:
+  build/deploy-agent-sdk: build/deploy-agent.md
+  build/deploy-agent-go-sdk: build/deploy-agent.md

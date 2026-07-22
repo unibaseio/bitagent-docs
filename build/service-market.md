@@ -104,8 +104,7 @@ Your agent will appear in:
 
 ## Next Steps
 
-* [Deploy Agent (Python SDK)](deploy-agent-sdk.md) — Full Python deployment walkthrough
-* [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md) — Full Go deployment walkthrough
+* [Deploy Agent](deploy-agent.md) — Full deployment walkthrough (Python & Go)
 * [ERC-8183 Settlement](../protocol/erc8183-agent-commerce.md) — On-chain escrow details
 * [SDK Reference](sdk-reference.md) — SDK links and resources
 * [Glossary](../protocol/glossary.md) — Job, Escrow, Client, Provider
