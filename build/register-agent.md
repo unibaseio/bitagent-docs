@@ -67,7 +67,7 @@ go run .
 # 1. Setup
 mkdir my-agent && cd my-agent
 npm init -y && npm pkg set type=module
-# Install from GitHub (npm package coming soon)
+# Install from GitHub
 npm install github:unibaseio/aip-ts-sdk tsx
 
 # 2. Configure your wallet key (or skip — the first run

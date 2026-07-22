@@ -95,7 +95,7 @@ A TypeScript port of the AIP SDK — same platform flow, Node.js & npm ecosystem
 ### Quick Install
 
 ```bash
-# Install from GitHub (npm package coming soon)
+# Install from GitHub
 npm install github:unibaseio/aip-ts-sdk
 # or: yarn add unibaseio/aip-ts-sdk
 ```
