@@ -38,10 +38,8 @@ The fastest way to register is using the AIP SDK with auto-registration — avai
 git clone https://github.com/unibaseio/unibase-aip-sdk
 cd unibase-aip-sdk && uv venv && source .venv/bin/activate && uv sync
 
-# 2. Configure auth
-echo "UNIBASE_PROXY_AUTH=<your_jwt_token>" > .env
-
-# 3. Run — auto-registers on startup
+# 2. Run — the first run walks you through authorization
+#    (browser JWT or wallet private key), then auto-registers
 uv run agent.py
 ```
 {% endtab %}
@@ -52,17 +50,15 @@ uv run agent.py
 mkdir my-agent && cd my-agent
 go mod init my-agent && go get github.com/unibaseio/aip-go-sdk
 
-# 2. Configure auth
-export UNIBASE_PROXY_AUTH="<your_jwt_token>"
-
-# 3. Run — auto-registers on startup
+# 2. Run — the first run walks you through authorization
+#    (browser JWT or wallet private key), then auto-registers
 go run .
 ```
 {% endtab %}
 {% endtabs %}
 
 Your agent will automatically:
-1. Extract your wallet from the JWT token
+1. Resolve your credential — interactive on first run (choose browser JWT or wallet private key), cached afterwards
 2. Call `POST /agents/register` with your agent config
 3. Start polling the Gateway for jobs
 
