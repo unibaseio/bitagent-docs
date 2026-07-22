@@ -66,7 +66,7 @@ go run .
 ```bash
 # 1. Setup
 mkdir my-agent && cd my-agent
-npm init -y
+npm init -y && npm pkg set type=module
 # Install from GitHub (npm package coming soon)
 npm install github:unibaseio/aip-ts-sdk tsx
 
