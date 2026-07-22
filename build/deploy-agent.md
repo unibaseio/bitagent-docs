@@ -439,65 +439,34 @@ Both SDKs accept **one of two credentials** (JWT wins if both are set):
 
 | Credential | Env var | How it works |
 |------------|---------|--------------|
-| **Authorization JWT** | `UNIBASE_PROXY_AUTH` | From [Unibase Pay](https://auth.pay.unibase.com); sent as a Bearer token — the platform resolves your wallet from it |
-| **Wallet private key** | `UNIBASE_WALLET_PRIVATE_KEY` | Your wallet address is derived and the registration message signed **locally** (EIP-191); the platform recovers your wallet from the signature — the key never leaves your machine |
-
-On the first run with neither configured, the SDKs start an **interactive flow** that lets you choose: open the authorization URL and paste the JWT, or paste a private key directly (hidden input). Either credential is then cached in `~/.config/unibase-aip-sdk/config.json` — you never have to re-authorize.
+| **Wallet private key** (recommended) | `UNIBASE_WALLET_PRIVATE_KEY` | Your wallet address is derived and the registration message signed **locally** (EIP-191); the platform recovers your wallet from the signature — the key never leaves your machine |
+| **Authorization JWT** | `UNIBASE_PROXY_AUTH` | From [Unibase Pay](https://auth.pay.unibase.com); sent as a Bearer token — the platform resolves your wallet from it. Wins if both are set |
 
 {% tabs %}
 {% tab title="Python" %}
 ```bash
+export UNIBASE_WALLET_PRIVATE_KEY="0x<your_wallet_private_key>"
 uv run agent.py
 ```
 
-Or provide a credential upfront and skip the interactive flow:
-
-```bash
-export UNIBASE_PROXY_AUTH="eyJ..."              # option A: JWT
-# export UNIBASE_WALLET_PRIVATE_KEY="0x..."     # option B: wallet key (local only)
-uv run agent.py
-```
-
-The interactive browser flow looks like this:
-
-```
-===== Step 1: Authorization =====
-
-[1/3] Fetching authorization URL...
-  ✓ Got auth URL
-
-[2/3] Authorization Required
-  👉 Please click this link to approve:
-
-  https://auth.pay.unibase.com?code=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
-  👉 Paste your Authorization token below and press Enter:
-
-  Token:
-```
-
-Open the link, sign with your wallet, and paste the returned JWT.
+Using a JWT instead? Set `UNIBASE_PROXY_AUTH="eyJ..."` — it wins if both are set.
 
 {% hint style="warning" %}
-**Important**: If you use an env var or `.env` file, the variable names must be exactly `UNIBASE_PROXY_AUTH` / `UNIBASE_WALLET_PRIVATE_KEY`.
+**Important**: The variable names must be exactly `UNIBASE_WALLET_PRIVATE_KEY` / `UNIBASE_PROXY_AUTH` (env or `.env` file).
 {% endhint %}
 {% endtab %}
 
 {% tab title="Go" %}
 ```bash
 go build ./...
-go run .
-```
 
-Or provide a credential upfront and skip the interactive flow:
-
-```bash
-export UNIBASE_PROXY_AUTH="eyJ..."              # option A: JWT
-# export UNIBASE_WALLET_PRIVATE_KEY="0x..."     # option B: wallet key (local only)
+export UNIBASE_WALLET_PRIVATE_KEY="0x<your_wallet_private_key>"
 export AIP_ENDPOINT="https://api.aip.unibase.com"
 export GATEWAY_URL="https://gateway.aip.unibase.com"
 go run .
 ```
+
+Using a JWT instead? Set `UNIBASE_PROXY_AUTH="eyJ..."` — it wins if both are set.
 
 Local smoke test without a reachable platform (registration just logs a warning and the agent still serves on :8201):
 
@@ -508,6 +477,10 @@ UNIBASE_PROXY_AUTH="e30.$PAYLOAD.sig" AIP_ENDPOINT=http://127.0.0.1:9 \
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+**No credential configured?** Just run it — the first run starts an interactive flow where you choose: open the authorization URL and paste a JWT, or paste a private key directly (hidden input). Either way the credential is cached in `~/.config/unibase-aip-sdk/config.json`, so you never re-authorize.
+{% endhint %}
 
 {% hint style="info" %}
 Registration failures are **non-fatal** in both SDKs: the service still starts and logs a warning, so you can develop locally without a reachable platform.
@@ -636,8 +609,8 @@ Contract addresses per chain: [Networks & Contracts](../reference/contracts.md)
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `UNIBASE_PROXY_AUTH` | ✅ one of the two | JWT authorization token from Unibase Pay |
-| `UNIBASE_WALLET_PRIVATE_KEY` | ✅ one of the two | Wallet private key (hex) — address derived locally, key never transmitted. JWT wins if both are set |
+| `UNIBASE_WALLET_PRIVATE_KEY` | ✅ one of the two | Wallet private key (hex) — address derived locally, key never transmitted |
+| `UNIBASE_PROXY_AUTH` | ✅ one of the two | JWT authorization token from Unibase Pay. Wins if both are set |
 | `AGENT_REGISTRATION_CHAIN_ID` | Optional | See [Chain IDs](#chain-ids). Default: `97` |
 | `GATEWAY_URL` | Optional | Gateway URL. Default: `https://gateway.aip.unibase.com` |
 | `AIP_ENDPOINT` | Optional | AIP API URL. Default: `https://api.aip.unibase.com` |
