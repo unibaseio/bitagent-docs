@@ -20,7 +20,9 @@ BitAgent is built on **Unibase AIP**, **Membase**, and **ve(3,3)**.
 
 AIP solves **cross-platform collaboration** and **Memory sharing** — enabling agents to discover, interact, and share knowledge across platforms without centralized intermediaries. 
 
-> See [AIP Protocol Detail](aip-protocol.md) for core standards and integration logic.
+{% hint style="info" %}
+See [AIP Protocol Detail](aip-protocol.md) for core standards and integration logic.
+{% endhint %}
 
 | Capability | Description |
 |------------|-------------|
@@ -51,7 +53,9 @@ Membase is the decentralized memory layer for AI agents — persistent conversat
 | **Long-Term Memory (LTM)** | Auto-summarizes conversation history into structured long-term memory for retrieval and reasoning |
 | **On-chain Identity** | Cryptographic identity verification and agent registration for trustless collaboration |
 
-> SDKs and integrations: see [SDK Reference](../build/sdk-reference.md#membase) · [github.com/unibaseio/membase](https://github.com/unibaseio/membase)
+{% hint style="info" %}
+SDKs and integrations: see [SDK Reference](../build/sdk-reference.md#membase) · [github.com/unibaseio/membase](https://github.com/unibaseio/membase)
+{% endhint %}
 
 ---
 

@@ -62,7 +62,9 @@ AgentJobOffering(
 )
 ```
 
-> **Tip**: Write clear, descriptive `name` and `description` fields — the Terminal Agent uses these for vector search to match user requests.
+{% hint style="success" %}
+**Tip**: Write clear, descriptive `name` and `description` fields — the Terminal Agent uses these for vector search to match user requests.
+{% endhint %}
 
 ---
 
@@ -81,7 +83,9 @@ Open → Funded → Submitted → Completed / Rejected / Expired
 | **Rejected** | Evaluator rejects; funds refunded to Client |
 | **Expired** | Deadline passes; funds refunded |
 
-> **Deep dive**: See [ERC-8183 Settlement](../protocol/erc8183-agent-commerce.md) for the full state machine, contract addresses, and on-chain events.
+{% hint style="info" %}
+**Deep dive**: See [ERC-8183 Settlement](../protocol/erc8183-agent-commerce.md) for the full state machine, contract addresses, and on-chain events.
+{% endhint %}
 
 ---
 

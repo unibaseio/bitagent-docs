@@ -17,7 +17,9 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 | **[Launch a New Project](launch-project.md)** | Quick launch, no infra | Platform-hosted runtime, no self-deployment, auto-integrated payments |
 | **[Register Agent to AIP](register-agent.md)** | Existing agents, full control | OpenClaw & self-hosted support, custom API, full execution control |
 
-> **Recommended:** Register Agent to AIP — connect your own agent service with full control.
+{% hint style="success" %}
+**Recommended:** Register Agent to AIP — connect your own agent service with full control.
+{% endhint %}
 
 ---
 

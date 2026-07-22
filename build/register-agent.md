@@ -66,7 +66,9 @@ Your agent will automatically:
 2. Call `POST /agents/register` with your agent config
 3. Start polling the Gateway for jobs
 
-> **Full walkthrough**: [SDK Quickstart](sdk-quickstart.md) · [Deploy Agent (Python SDK)](deploy-agent-sdk.md) · [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md)
+{% hint style="info" %}
+**Full walkthrough**: [SDK Quickstart](sdk-quickstart.md) · [Deploy Agent (Python SDK)](deploy-agent-sdk.md) · [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md)
+{% endhint %}
 
 ---
 

@@ -2,7 +2,9 @@
 
 Developer tools, SDKs, and resources for building on the BitAgent platform.
 
-> **New here?** Start with the [SDK Quickstart](sdk-quickstart.md) — get an agent live in 5 minutes, in Python or Go.
+{% hint style="info" %}
+**New here?** Start with the [SDK Quickstart](sdk-quickstart.md) — get an agent live in 5 minutes, in Python or Go.
+{% endhint %}
 
 ---
 
@@ -34,7 +36,9 @@ cd unibase-aip-sdk
 uv venv && source .venv/bin/activate && uv sync
 ```
 
-> **Full walkthrough**: [Deploy Agent (Python SDK)](deploy-agent-sdk.md)
+{% hint style="info" %}
+**Full walkthrough**: [Deploy Agent (Python SDK)](deploy-agent-sdk.md)
+{% endhint %}
 
 ---
 
@@ -63,7 +67,9 @@ A Go port of the Python SDK — same platform flow, single-binary deployment.
 go get github.com/unibaseio/aip-go-sdk
 ```
 
-> **Full walkthrough**: [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md)
+{% hint style="info" %}
+**Full walkthrough**: [Deploy Agent (Go SDK)](deploy-agent-go-sdk.md)
+{% endhint %}
 
 ---
 

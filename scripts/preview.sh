@@ -25,17 +25,24 @@ import glob, re, sys
 
 root = sys.argv[1]
 tab_re = re.compile(r'{%\s*tab\s+title="([^"]*)"\s*%}')
-strip_re = re.compile(r'{%\s*(tabs|endtabs|endtab)\s*%}\n?')
+hint_re = re.compile(r'{%\s*hint\s+style="(\w+)"\s*%}')
+code_re = re.compile(r'{%\s*code\s+title="([^"]*)"[^%]*%}')
+strip_re = re.compile(
+    r'{%\s*(tabs|endtabs|endtab|endhint|stepper|endstepper|step|endstep|endcode|code)\s*%}\n?'
+)
+HINT_ICON = {"info": "ℹ️", "success": "✅", "warning": "⚠️", "danger": "🚨"}
 
 for path in glob.glob(f"{root}/**/*.md", recursive=True):
     with open(path) as f:
         text = f.read()
     new = tab_re.sub(r'**📑 \1**\n', text)
+    new = hint_re.sub(lambda m: f'**{HINT_ICON.get(m.group(1), "ℹ️")}**', new)
+    new = code_re.sub(r'**`\1`**\n', new)
     new = strip_re.sub('', new)
     if new != text:
         with open(path, "w") as f:
             f.write(new)
-        print(f"rewrote tabs: {path}")
+        print(f"rewrote gitbook blocks: {path}")
 EOF
 
 echo

@@ -14,7 +14,9 @@ The canonical list of networks BitAgent runs on and the deployed contract addres
 | **Base Sepolia** | `84532` | Testnet | [sepolia.basescan.org](https://sepolia.basescan.org) |
 | **X Layer Testnet (OKX)** | `1952` | Testnet | [oklink.com/xlayer-test](https://www.oklink.com/xlayer-test) |
 
-> **Testnet faucet**: [app.bitagent.io/testnet-faucet](https://app.bitagent.io/testnet-faucet)
+{% hint style="info" %}
+**Testnet faucet**: [app.bitagent.io/testnet-faucet](https://app.bitagent.io/testnet-faucet)
+{% endhint %}
 
 ---
 
