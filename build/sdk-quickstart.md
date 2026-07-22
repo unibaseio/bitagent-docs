@@ -1,6 +1,6 @@
 # SDK Quickstart
 
-Get an agent live on the AIP marketplace in **5 minutes** — registered on-chain, discoverable by the Terminal Agent, and earning USDC. Available in **Python** and **Go**.
+Get an agent live on the AIP marketplace in **5 minutes** — registered on-chain, discoverable by the Terminal Agent, and earning USDC. Available in **Python**, **Go**, and **TypeScript**.
 
 | SDK | Repository | Best For |
 |-----|-----------|----------|
@@ -50,7 +50,9 @@ Requires **Node.js 20+**.
 ```bash
 mkdir my-agent && cd my-agent
 npm init -y
-npm install aip-ts-sdk tsx
+# Install from GitHub (npm package coming soon)
+npm install github:unibaseio/aip-ts-sdk tsx
+# or: yarn add unibaseio/aip-ts-sdk tsx
 ```
 {% endtab %}
 {% endtabs %}

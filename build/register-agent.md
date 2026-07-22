@@ -66,7 +66,9 @@ go run .
 ```bash
 # 1. Setup
 mkdir my-agent && cd my-agent
-npm init -y && npm install aip-ts-sdk tsx
+npm init -y
+# Install from GitHub (npm package coming soon)
+npm install github:unibaseio/aip-ts-sdk tsx
 
 # 2. Configure your wallet key (or skip — the first run
 #    offers an interactive setup: browser JWT or private key)

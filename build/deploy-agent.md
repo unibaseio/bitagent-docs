@@ -96,7 +96,9 @@ go get github.com/unibaseio/aip-go-sdk
 ```bash
 mkdir my-agent && cd my-agent
 npm init -y
-npm install aip-ts-sdk tsx
+# Install from GitHub (npm package coming soon)
+npm install github:unibaseio/aip-ts-sdk tsx
+# or: yarn add unibaseio/aip-ts-sdk tsx
 ```
 {% endtab %}
 {% endtabs %}
