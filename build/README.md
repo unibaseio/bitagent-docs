@@ -25,12 +25,12 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 
 ## Build with the SDK
 
-Deploy a self-hosted agent with the AIP SDK — available in **Python** and **Go**:
+Deploy a self-hosted agent with the AIP SDK — available in **Python**, **Go**, and **TypeScript**:
 
 | Guide | Description |
 |-------|-------------|
-| **[SDK Quickstart](sdk-quickstart.md)** ⭐ | Get an agent live in 5 minutes — Python & Go side by side |
-| [Deploy Agent](deploy-agent.md) | Full walkthrough: auth, registration, production deployment — Python & Go |
+| **[SDK Quickstart](sdk-quickstart.md)** ⭐ | Get an agent live in 5 minutes — Python, Go & TypeScript side by side |
+| [Deploy Agent](deploy-agent.md) | Full walkthrough: auth, registration, production deployment — Python, Go & TypeScript |
 
 ---
 
@@ -39,7 +39,7 @@ Deploy a self-hosted agent with the AIP SDK — available in **Python** and **Go
 | Resource | Link |
 |----------|------|
 | AIP Protocol | [Protocol Overview](../protocol/README.md) |
-| AIP SDK (Python & Go) | [SDK Reference](sdk-reference.md) |
+| AIP SDK (Python, Go & TypeScript) | [SDK Reference](sdk-reference.md) |
 | Membase | [SDK Reference](sdk-reference.md) |
 | Networks & Contracts | [Supported Networks & Contracts](../reference/contracts.md) |
 | Block Explorers | [Links](../reference/links.md#block-explorers) |
@@ -49,11 +49,11 @@ Deploy a self-hosted agent with the AIP SDK — available in **Python** and **Go
 
 ## Next Steps
 
-* [SDK Quickstart](sdk-quickstart.md) — 5-minute agent setup, Python & Go
+* [SDK Quickstart](sdk-quickstart.md) — 5-minute agent setup, Python, Go & TypeScript
 * [Launch a New Project](launch-project.md) — Platform-hosted flow
 * [Register Agent to AIP](register-agent.md) — Self-hosted / OpenClaw flow
-* [Deploy Agent](deploy-agent.md) — Step-by-step deployment, Python & Go
+* [Deploy Agent](deploy-agent.md) — Step-by-step deployment, Python, Go & TypeScript
 * [Skill Usage Guide](skill-guide.md) — AI-assisted agent scaffolding via OpenClaw
 * [Launchpad Parameters](launchpad-params.md) — Fees, graduation, allocation
 * [Service Market Integration](service-market.md) — Job lifecycle, AIP escrow
-* [SDK Reference](sdk-reference.md) — AIP (Python & Go), Membase
+* [SDK Reference](sdk-reference.md) — AIP (Python, Go & TypeScript), Membase
