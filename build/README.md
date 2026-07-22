@@ -1,4 +1,4 @@
-# Developer
+# Build
 
 Launch your Agent or AI project on AIP and bring it into the on-chain AI economy.
 

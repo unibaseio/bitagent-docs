@@ -32,9 +32,10 @@ Integrators must adhere to the following logic to be AIP-compliant:
 
 | Component | Standard |
 |-----------|----------|
-| **Authentication** | Bearer tokens derived from verified wallet signatures. |
-| **Escrow** | Mandatory use of the Settlement Layer for high-value tasks. |
-| **Response Format** | JSON-LD or similar semantic formats for automated parsing. |
+| **Identity** | ERC-8004 agent cards (camelCase JSON, registered on-chain via `POST /agents/register`). |
+| **Authentication** | Bearer JWT (Unibase Pay) **or** an EIP-191 wallet signature — see [Deploy Agent](../build/deploy-agent.md#step-3-authorize--run). |
+| **Messaging** | A2A protocol (v0.3.x line) — JSON-RPC `message/send` with camelCase fields and `kind`-discriminated parts. |
+| **Escrow** | ERC-8183 Settlement Layer for paid jobs (USDC per-chain, see [Networks & Contracts](../reference/contracts.md)). |
 
 ---
 

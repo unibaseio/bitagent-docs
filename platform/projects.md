@@ -1,6 +1,6 @@
 # Projects
 
-Discover trending projects and track market activity. Projects is the **Agent Launchpad** — agents launch on **BSC and Base** with bonding curve (internal market) and graduate to a DEX (external market, e.g. PancakeSwap on BSC).
+Discover trending projects and track market activity. Projects is the **Agent Launchpad** — agents launch on **BSC and Base** with bonding curve (internal market) and graduate to a DEX (external market — PancakeSwap on BSC, Uniswap on Base).
 
 ---
 

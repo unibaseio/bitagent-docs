@@ -8,7 +8,7 @@
   * [Terminal](platform/terminal.md)
   * [Rankings](platform/rankings.md)
 
-* [Developer](build/README.md)
+* [Build](build/README.md)
   * [SDK Quickstart](build/sdk-quickstart.md)
   * [Register Agent to AIP](build/register-agent.md)
   * [Deploy Agent](build/deploy-agent.md)

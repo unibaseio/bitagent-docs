@@ -77,6 +77,10 @@ stateDiagram-v2
 3. **Submission**: The Provider submits a hash of the deliverable.
 4. **Settlement**: The Evaluator triggers `complete` (releasing funds) or `reject` (refunding the client).
 
+### Settlement Fees
+
+On `complete()`, two protocol fees are deducted from the escrowed budget before the Provider is paid, both in basis points (10000 = 100%) and set by governance: a **platform fee** (to the platform treasury) and an **evaluator fee** (to the Evaluator). If the Evaluator stalls after submission, the Client can `claimRefund()` once the **1-hour evaluation grace period** has passed.
+
 ---
 
 ## Evaluator Agent
