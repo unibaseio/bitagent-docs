@@ -10,15 +10,19 @@ Key parameters for Projects — Agent Launchpad on **BSC and Base**.
 |-----------|-------|
 | Style | Pump-fun style |
 | Total Supply | 10,000,000,000 (10B) per token |
-| Sale Allocation | 85% (8.5B) sold via bonding curve |
-| Liquidity to DEX | 15% (1.5B) minted at graduation into the DEX pool |
+| Sale Allocation | 85% (8.5B) allocated to the bonding curve, split between an optional **DEV Reserve** and the public curve |
+| DEV Reserve | Creator pre-allocation, **0–70%** of total supply (default 0) — taken out of the 85% |
+| Public Curve | The remainder of the 85%, so a **minimum of 15%** of total supply |
+| Liquidity to DEX | 15% (1.5B) minted at graduation into the DEX pool — fixed |
 | Creation Fee | **0.02 BNB** on BSC · **free** on Base and X Layer Testnet |
 | Trading Fee (Bonding Curve) | 1% on buys **and** sells |
 | Trading Fee (DEX) | 0.25% (pool fee tier) |
 
 ### Curve Shape
 
-The bonding curve is a ~100-step price ladder. Default: **exponential**, final step ≈ 10× the initial price. Reserves with few decimals use a **linear** curve instead (e.g. USDC on Base: 1µ → 2µ per token, graduating at ≈ 12,793 USDC raised).
+The bonding curve is a ~100-step price ladder (99–100 steps depending on the reserve token). Default: **exponential**, final step ≈ 10× the initial price.
+
+Reserves with few decimals override this. **USDC (6 decimals) on Base Mainnet and Base Sepolia** runs a **flat single-tier linear** curve — 1µ → 1µ per token — because USDC cannot represent a price below 1e-6, so the exponential's ~2%/step rise would quantize to one tier anyway. At the full 8.5B curve allocation that graduates at **≈ 8,500 USDC** raised.
 
 ---
 
@@ -28,10 +32,14 @@ The reserve token is chosen at launch and is what buyers pay on the bonding curv
 
 | Chain | Reserve Tokens |
 |-------|----------------|
-| BSC (56 / 97) | **UB**, USD1, BASE, WBNB |
+| BSC (56 / 97) | **UB**, USD1, WBNB |
 | Base Mainnet (8453) | **UB**, USDC, WETH |
-| Base Sepolia (84532) | UB |
+| Base Sepolia (84532) | **UB**, USDC, WETH |
 | X Layer Testnet (1952) | UB |
+
+{% hint style="info" %}
+Some chains recognise additional tokens (e.g. USDC on X Layer Testnet) for agent wallets and ERC-8183 settlement without offering them as bonding-curve reserves. Only the tokens listed above can be chosen at launch.
+{% endhint %}
 
 ---
 

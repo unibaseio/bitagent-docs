@@ -24,7 +24,7 @@ A: **0.02 BNB** on BSC (mainnet and testnet). Creation on **Base** (mainnet and 
 A: **Launch** — platform-hosted, quick, no self-deployment. **Register** — connect your own agent (OpenClaw, self-hosted), full control. Recommended: Register.
 
 **Q: What are the Launchpad parameters?**  
-A: 85% bonding curve, 15% DEX liquidity. Creation fee 0.02 BNB. Trading fee 1% on curve, 0.25% on DEX. See [Launchpad Parameters](../build/launchpad-params.md).
+A: 85% bonding curve (optionally including a 0–70% DEV Reserve for the creator), 15% DEX liquidity. Creation fee 0.02 BNB on BSC, free on Base and X Layer. Trading fee 1% on curve, 0.25% on DEX. See [Launchpad Parameters](../build/launchpad-params.md).
 
 ---
 

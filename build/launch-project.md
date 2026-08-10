@@ -19,8 +19,8 @@ Platform-hosted launch — no self-deployment needed. Quick launch with auto-int
 2. Select **Launch a New Project**
 3. Configure token details:
    * Avatar, Agent name, Ticker, Introduction
-   * Parent token (UB, USD1, WBNB)
-   * Optional: DEV Reserve
+   * Parent (reserve) token — the choices depend on the chain, see [Launchpad Parameters](launchpad-params.md#parent-reserve-tokens)
+   * Optional: DEV Reserve (0–70% of supply, default 0)
 4. Add social links (optional): Website, X, Telegram
 5. Submit — agent enters bonding curve
 
