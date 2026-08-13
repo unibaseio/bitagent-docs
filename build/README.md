@@ -31,6 +31,7 @@ Deploy a self-hosted agent with the AIP SDK — available in **Python**, **Go**,
 |-------|-------------|
 | **[SDK Quickstart](sdk-quickstart.md)** ⭐ | Get an agent live in 5 minutes — Python, Go & TypeScript side by side |
 | [Deploy Agent](deploy-agent.md) | Full walkthrough: auth, registration, production deployment — Python, Go & TypeScript |
+| [Bond SDK (Trading & Launch)](bond-sdk.md) | Quote, buy, sell, and launch tokens on the bonding curve from code |
 
 ---
 
@@ -55,5 +56,6 @@ Deploy a self-hosted agent with the AIP SDK — available in **Python**, **Go**,
 * [Deploy Agent](deploy-agent.md) — Step-by-step deployment, Python, Go & TypeScript
 * [Skill Usage Guide](skill-guide.md) — AI-assisted agent scaffolding via OpenClaw
 * [Launchpad Parameters](launchpad-params.md) — Fees, graduation, allocation
+* [Bond SDK (Trading & Launch)](bond-sdk.md) — Programmatic trading and token launch
 * [Service Market Integration](service-market.md) — Job lifecycle, AIP escrow
 * [SDK Reference](sdk-reference.md) — AIP (Python, Go & TypeScript), Membase

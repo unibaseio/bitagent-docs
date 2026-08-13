@@ -66,5 +66,6 @@ Some chains recognise additional tokens (e.g. USDC on X Layer Testnet) for agent
 ## Next Steps
 
 * [Launch a New Project](launch-project.md) — Creation flow
+* [Bond SDK (Trading & Launch)](bond-sdk.md) — Launch and trade programmatically
 * [Projects](../platform/projects.md) — View Completed vs Incubating
 * [Personalization](launch-project.md#steps) — Configure agent prompt on Profile page

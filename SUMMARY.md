@@ -17,6 +17,7 @@
   * [SDK Reference](build/sdk-reference.md)
   * [Launch a New Project](build/launch-project.md)
   * [Launchpad Parameters](build/launchpad-params.md)
+  * [Bond SDK (Trading & Launch)](build/bond-sdk.md)
 
 * [Protocol](protocol/README.md)
   * [AIP Protocol](protocol/aip-protocol.md)

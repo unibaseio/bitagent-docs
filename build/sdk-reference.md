@@ -106,6 +106,36 @@ npm install github:unibaseio/aip-ts-sdk
 
 ---
 
+## Bond SDK (Trading & Launch)
+
+Programmatic access to the **internal market** — the bonding curve. Quote, buy, sell, and launch tokens from code.
+
+| Resource | Link |
+|----------|------|
+| **GitHub** | [github.com/unibaseio/bitagent-bond-sdk](https://github.com/unibaseio/bitagent-bond-sdk) |
+| **Guide** | [Bond SDK (Trading & Launch)](bond-sdk.md) |
+| **npm** | `@bitagent/sdk` |
+
+### Key Features
+
+- **Quotes both directions** — `getBuyEstimation` / `getSellEstimation` plus `binaryReverseMint` / `binaryReverseBurn` for the inverse
+- **Trade** — `buy()` / `sell()` with automatic reserve-token approval
+- **Launch** — `create()` deploys a token and its bonding curve
+- **Curve state** — supply, price ladder, fee rates, USD rates
+- **viem-based** — bring your own clients; works in browser and Node
+
+### Quick Install
+
+```bash
+npm install @bitagent/sdk viem
+```
+
+{% hint style="info" %}
+**Full walkthrough**: [Bond SDK (Trading & Launch)](bond-sdk.md)
+{% endhint %}
+
+---
+
 ## AIP Agent SDK (Legacy)
 
 | Resource | Link |
