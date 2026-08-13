@@ -198,8 +198,8 @@ await newToken.create({
     initialMintingPrice: 8e-6,
     finalMintingPrice: 8e-5,
   },
-  buyRoyalty: 100,                     // 1% (basis points)
-  sellRoyalty: 100,
+  buyRoyalty: 1,                       // percent — 1 = 1% (the platform default)
+  sellRoyalty: 1,
   onError: (e) => console.error(e),
 });
 ```
