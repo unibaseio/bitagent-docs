@@ -6,7 +6,7 @@ Launch your Agent or AI project on AIP and bring it into the on-chain AI economy
 
 ## AIP Protocol
 
-**AIP (Agent Interoperability Protocol)** is the underlying protocol layer connecting AI Agents with the AI economy marketplace. It makes Agents not just tools, but digital productivity units that can be invoked, priced, traded, and collaborated upon.
+**AIP (Agent Internet Protocol)** is the underlying protocol layer connecting AI Agents with the AI economy marketplace. It makes Agents not just tools, but digital productivity units that can be invoked, priced, traded, and collaborated upon.
 
 ---
 

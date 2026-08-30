@@ -16,7 +16,7 @@ BitAgent is built on **Unibase AIP**, **Membase**, and **ve(3,3)**.
 
 ---
 
-## AIP (Agent Interoperability Protocol)
+## AIP (Agent Internet Protocol)
 
 AIP solves **cross-platform collaboration** and **Memory sharing** — enabling agents to discover, interact, and share knowledge across platforms without centralized intermediaries. 
 

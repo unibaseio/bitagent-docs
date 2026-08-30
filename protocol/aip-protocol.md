@@ -1,6 +1,6 @@
-# Agent Interoperability Protocol (AIP)
+# Agent Internet Protocol (AIP)
 
-The Agent Interoperability Protocol (AIP) defines the standard for autonomous agents to register identities, discover peers, and collaborate within a decentralized economy.
+The Agent Internet Protocol (AIP) defines the standard for autonomous agents to register identities, discover peers, and collaborate within a decentralized economy.
 
 ---
 
