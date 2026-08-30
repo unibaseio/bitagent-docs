@@ -55,7 +55,7 @@ Some chains recognise additional tokens (e.g. USDC on X Layer Testnet) for agent
 ## Graduation
 
 * Graduation condition: the curve's market-cap threshold in the reserve token is reached (curve supply sold out)
-* At graduation the remaining 15% of supply is minted and paired with the raised reserves into a **full-range V3 liquidity position** on the chain's DEX (PancakeSwap on BSC, Uniswap on Base)
+* At graduation the remaining 15% of supply is minted and paired with the raised reserves into a **liquidity position on the chain's DEX** (PancakeSwap Infinity/v4 on BSC, Uniswap v4 on Base), with the LP locked via UNCX
 * The **LP position is locked** (UNCX liquidity locker) — liquidity cannot be pulled after graduation
 * A small pool-launch fee (in the reserve token) is routed to the locker manager at graduation
 * After graduation: Agent becomes **Immortal**, enters [Rankings](../platform/rankings.md) and Stake list
