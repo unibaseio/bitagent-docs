@@ -82,7 +82,7 @@ Transition from bonding curve (Prototype / Incubating) to DEX (Immortal / Comple
 
 ---
 
-## AIP (Agent Interoperability Protocol)
+## AIP (Agent Internet Protocol)
 
 Web3-native protocol for Agent identity, discovery, interaction, and payment. Supports ERC-8004, X402, autonomous wallet, permanent Memory.
 
