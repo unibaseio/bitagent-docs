@@ -6,6 +6,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const OUT = 'src/content/docs';
+// Sub-path the site is served under, e.g. /bitagent-docs on a GitHub Pages project
+// site; empty on a custom domain. Starlight prefixes its own nav; we prefix page links.
+export const BASE = (process.env.DOCS_BASE ?? '').replace(/\/$/, '');
 const ASIDE = { info: 'note', success: 'tip', warning: 'caution', danger: 'danger' };
 
 // GitBook URL scheme, kept so links and the domain can move over unchanged:
@@ -32,7 +35,7 @@ export function sidebar() {
 export function redirects() {
   const block = fs.readFileSync('.gitbook.yaml', 'utf8').split('redirects:')[1] ?? '';
   return Object.fromEntries(
-    [...block.matchAll(/^\s+(\S+): (\S+\.md)$/gm)].map(([, from, to]) => ['/' + from, urlOf(to)]),
+    [...block.matchAll(/^\s+(\S+): (\S+\.md)$/gm)].map(([, from, to]) => ['/' + from, BASE + urlOf(to)]),
   );
 }
 
@@ -42,7 +45,7 @@ function convert(file, src) {
   let body = src
     .replace(/^# .+\n+/m, '') // Starlight renders the title itself
     .replace(/\]\((?!https?:)([^)\s#]+\.md)(#[^)\s]*)?\)/g, (_, target, hash = '') =>
-      `](${urlOf(path.posix.join(path.posix.dirname(file), target))}${hash})`)
+      `](${BASE}${urlOf(path.posix.join(path.posix.dirname(file), target))}${hash})`)
     .replace(/\{% hint style="(\w+)" %\}/g, (_, style) => ':::' + (ASIDE[style] ?? 'note'))
     .replace(/\{% endhint %\}/g, ':::')
     .replace(/\{% code title="([^"]+)"([^%]*)%\}\n```(\w*)/g, (_, title, attrs, lang) =>

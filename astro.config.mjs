@@ -2,12 +2,13 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
-import { generate, sidebar, redirects } from './scripts/gitbook.mjs';
+import { BASE, generate, sidebar, redirects } from './scripts/gitbook.mjs';
 
 generate();
 
 export default defineConfig({
-  // site: 'https://docs.example.com', // set once the domain is chosen (sitemap + canonical URLs)
+  site: process.env.DOCS_SITE, // e.g. https://unibaseio.github.io — enables sitemap + canonical URLs
+  base: BASE || undefined,
   redirects: redirects(),
   integrations: [
     mermaid(), // must come before starlight
