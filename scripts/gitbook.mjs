@@ -45,7 +45,8 @@ function convert(file, src) {
       `](${urlOf(path.posix.join(path.posix.dirname(file), target))}${hash})`)
     .replace(/\{% hint style="(\w+)" %\}/g, (_, style) => ':::' + (ASIDE[style] ?? 'note'))
     .replace(/\{% endhint %\}/g, ':::')
-    .replace(/\{% code title="([^"]+)"[^%]*%\}\n```(\w*)/g, '```$2 title="$1"')
+    .replace(/\{% code title="([^"]+)"([^%]*)%\}\n```(\w*)/g, (_, title, attrs, lang) =>
+      `\`\`\`${lang} title="${title}"${attrs.includes('lineNumbers="true"') ? ' showLineNumbers' : ''}`)
     .replace(/\{% endcode %\}\n?/g, '')
     .replace(/\{% step %\}\n+### /g, () => `## Step ${++step}: `)
     .replace(/\{% (stepper|endstepper|endstep) %\}\n?/g, '')
