@@ -1,5 +1,5 @@
-_book/
 node_modules/
+dist/
+.astro/
+src/content/docs/
 .claude/worktrees/
-package.json
-package-lock.json
