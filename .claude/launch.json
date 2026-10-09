@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "gitbook-docs",
+      "name": "starlight-docs",
       "runtimeExecutable": "bash",
-      "runtimeArgs": ["scripts/preview.sh", "4001"],
+      "runtimeArgs": ["-c", "source ~/.nvm/nvm.sh && nvm use >/dev/null && exec npx astro dev --port 4001"],
       "port": 4001
     }
   ]
