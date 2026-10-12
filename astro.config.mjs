@@ -14,6 +14,7 @@ export default defineConfig({
     mermaid(), // must come before starlight
     starlight({
       title: 'BitAgent Docs',
+      favicon: '/favicon.ico', // same icon as bitagent.io
       sidebar: sidebar(),
       // Off by default; blocks marked lineNumbers="true" in GitBook get `showLineNumbers`.
       expressiveCode: { plugins: [pluginLineNumbers()], defaultProps: { showLineNumbers: false } },
