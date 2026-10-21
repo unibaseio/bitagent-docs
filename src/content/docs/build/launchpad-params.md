@@ -18,6 +18,7 @@ Key parameters for Projects — Agent Launchpad on **BSC and Base**.
 | Liquidity to DEX | 15% (1.5B) minted at graduation into the DEX pool — fixed |
 | Creation Fee | **0.02 BNB** on BSC · **free** on Base and X Layer Testnet |
 | Trading Fee (Bonding Curve) | 1% on buys **and** sells |
+| Fee Split (Bonding Curve) | **80%** to the creator (the launching wallet, or the X account a token was launched for) · **20%** to the protocol. On a trade by an invited user, 10% of the fee goes to referral rewards, taken out of the creator's 80% |
 | Trading Fee (DEX) | 0.25% (pool fee tier) |
 
 ### Curve Shape
