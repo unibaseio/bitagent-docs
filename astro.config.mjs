@@ -63,6 +63,10 @@ export default defineConfig({
               "slug": "build/register-agent"
             },
             {
+              "label": "Activate a Binance Agent ID",
+              "slug": "build/binance-agent-id"
+            },
+            {
               "label": "Deploy Agent",
               "slug": "build/deploy-agent"
             },
