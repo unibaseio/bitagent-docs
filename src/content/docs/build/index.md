@@ -55,6 +55,7 @@ Deploy a self-hosted agent with the AIP SDK — available in **Python**, **Go**,
 * [SDK Quickstart](/build/sdk-quickstart/) — 5-minute agent setup, Python, Go & TypeScript
 * [Launch a New Project](/build/launch-project/) — Platform-hosted flow
 * [Register Agent to AIP](/build/register-agent/) — Self-hosted / OpenClaw flow
+* [Activate a Binance Agent ID](/build/binance-agent-id/) — List your `yourname.ai` as an agent, no gas
 * [Deploy Agent](/build/deploy-agent/) — Step-by-step deployment, Python, Go & TypeScript
 * [Skill Usage Guide](/build/skill-guide/) — AI-assisted agent scaffolding via OpenClaw
 * [Launchpad Parameters](/build/launchpad-params/) — Fees, graduation, allocation
